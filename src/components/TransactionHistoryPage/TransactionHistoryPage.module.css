@@ -1,0 +1,46 @@
+.history-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  color: #555;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+li:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.no-transactions {
+  font-style: italic;
+  color: #888;
+  text-align: center;
+  padding: 20px;
+}

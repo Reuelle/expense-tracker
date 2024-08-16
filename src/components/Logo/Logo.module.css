@@ -1,0 +1,14 @@
+/* src/components/Logo/Logo.module.css */
+
+.logoContainer {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px; /* Adjust width as needed */
+}
+
+.logo {
+  width: 100%; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+}

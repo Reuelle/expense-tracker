@@ -1,0 +1,24 @@
+.main-transaction-page {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.content {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}

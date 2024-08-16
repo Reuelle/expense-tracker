@@ -1,0 +1,24 @@
+/* src/components/AllUsersTab/AllUsersTab.module.css */
+.allUsersTab {
+  display: none;
+}
+
+@media (min-width: 1440px) {
+  .allUsersTab {
+    display: block;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .allUsersTab h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .allUsersTab p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+}

@@ -1,0 +1,17 @@
+/* src/components/AuthNav/AuthNav.module.css */
+.authNav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.link {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,23 @@
+/* src/components/BurgerMenuButton/BurgerMenuButton.module.css */
+.burgerButton {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.burgerIcon {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #000;
+  margin: 5px 0;
+}
+
+/* Display burger button on tablet and mobile devices */
+@media (max-width: 768px) {
+  .burgerButton {
+    display: block;
+  }
+}
