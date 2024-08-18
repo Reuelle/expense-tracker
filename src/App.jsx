@@ -8,7 +8,7 @@ import TransactionHistoryPage from './components/TransactionHistoryPage/Transact
 import MainTransactionPage from './components/MainTransactionPage/MainTransactionPage';
 
 const App = () => (
-  <Router>
+  <BrowserRouter>
     <Header /> {/* Add Header here if it should be on all pages */}
     <Routes>
       <Route path="/" element={<HomePage />} />
@@ -17,7 +17,7 @@ const App = () => (
       <Route path="/transaction-history" element={<TransactionHistoryPage />} />
       <Route path="/main-transaction" element={<MainTransactionPage />} />
     </Routes>
-  </Router>
+  </BrowserRouter>
 );
 
 export default App;
