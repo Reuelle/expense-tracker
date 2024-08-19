@@ -6,6 +6,7 @@ import Header from '../Header/Header'; // Import the Header component
 import styles from './HomePage.module.css'; // Import CSS module for styling
 
 const HomePage = () => {
+   console.log('HomePage component is rendering');
   return (
     <div className={styles.homePage}>
       <Header /> {/* Render the Header component */}
