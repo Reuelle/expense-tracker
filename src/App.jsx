@@ -17,6 +17,7 @@ const App = () => (
       <Route path="/authorization" element={<AuthorizationPage />} />
       <Route path="/transaction-history" element={<TransactionHistoryPage />} />
       <Route path="/main-transaction" element={<MainTransactionPage />} />
+          </Route>
     </Routes>
   </BrowserRouter>
 );
