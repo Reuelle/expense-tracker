@@ -9,8 +9,8 @@ import MainTransactionPage from './components/MainTransactionPage/MainTransactio
 
 const App = () => (
   <BrowserRouter>
+     <Routes>
     <Header /> {/* Add Header here if it should be on all pages */}
-    <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/authorization" element={<AuthorizationPage />} />
