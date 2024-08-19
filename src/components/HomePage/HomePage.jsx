@@ -8,7 +8,7 @@ import styles from './HomePage.module.css'; // Import CSS module for styling
 const HomePage = () => {
    console.log('HomePage component is rendering');
   return (
-    <div className={styles.homePage}>
+    <div className={styles.homePage}style={{ backgroundColor: 'yellow', color: 'black' }}>
       <Header /> {/* Render the Header component */}
       <div className={styles.mainContent}>
         <h1>Manage Your Finances Masterfully!</h1>
