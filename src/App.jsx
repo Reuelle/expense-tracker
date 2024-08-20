@@ -7,7 +7,7 @@ import AuthorizationPage from './components/AuthorizationPage/AuthorizationPage'
 import TransactionHistoryPage from './components/TransactionHistoryPage/TransactionHistoryPage';
 import MainTransactionPage from './components/MainTransactionPage/MainTransactionPage';
 
-const App = () => (
+const App = () => <div>Test App Component</div>;(
   <BrowserRouter>
     <Header /> {/* Add Header here if it should be on all pages */}
     <Routes>
