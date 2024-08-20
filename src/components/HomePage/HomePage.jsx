@@ -2,7 +2,6 @@
 import React from 'react';
 import AuthNav from '../AuthNav/AuthNav';
 import AllUsersTab from '../AllUsersTab/AllUsersTab'; 
-import Header from '../Header/Header'; // Import the Header component
 import styles from './HomePage.module.css'; // Import CSS module for styling
 
 const HomePage = () => {
