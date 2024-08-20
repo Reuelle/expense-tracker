@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <div className={styles.homePage}>
       <div className={styles.mainContent}>
-        <DecorationComponent /> {/* Render the decoration component */}
+        <Decoration /> {/* Render the decoration component */}
         <h1>Manage Your Finances Masterfully!</h1>
         <p>
           ExpenseTracker effortlessly empowers you to take control of your finances! 
