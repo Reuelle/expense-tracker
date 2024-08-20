@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import HomePage from './components/HomePage/HomePage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
@@ -9,6 +9,15 @@ import MainTransactionPage from './components/MainTransactionPage/MainTransactio
 
 const App = () => (
   <Router basename="/expense-tracker">
-    {/* ... */}
+    <Header /> {/* Ensure Header appears on all pages */}
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/authorization" element={<AuthorizationPage />} />
+      <Route path="/transaction-history" element={<TransactionHistoryPage />} />
+      <Route path="/main-transaction" element={<MainTransactionPage />} />
+    </Routes>
   </Router>
 );
+
+export default App;
