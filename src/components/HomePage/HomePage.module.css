@@ -4,9 +4,7 @@
    width: 1440px;
   height: 709px;
    margin: 0 auto;
-  
 }
-
 .mainContent {
   flex: 1; /* Allow main content to expand and take available space */
   padding: 20px;
