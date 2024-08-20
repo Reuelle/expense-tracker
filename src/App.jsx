@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/Header/Header';
 import HomePage from './components/HomePage/HomePage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
@@ -8,16 +8,7 @@ import TransactionHistoryPage from './components/TransactionHistoryPage/Transact
 import MainTransactionPage from './components/MainTransactionPage/MainTransactionPage';
 
 const App = () => (
-  <BrowserRouter>
-    <Header />
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/authorization" element={<AuthorizationPage />} />
-      <Route path="/transaction-history" element={<TransactionHistoryPage />} />
-      <Route path="/main-transaction" element={<MainTransactionPage />} />
-    </Routes>
-  </BrowserRouter>
+  <Router basename="/expense-tracker">
+    {/* ... */}
+  </Router>
 );
-
-export default App;
