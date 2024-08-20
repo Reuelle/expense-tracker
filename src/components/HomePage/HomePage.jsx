@@ -2,6 +2,8 @@
 import React from 'react';
 import AuthNav from '../AuthNav/AuthNav';
 import AllUsersTab from '../AllUsersTab/AllUsersTab';
+import Decoration from './components/Decoration/Decoration';
+
 import styles from './HomePage.module.css'; // Import CSS module for styling
 
 const HomePage = () => {
@@ -9,6 +11,7 @@ const HomePage = () => {
   return (
     <div className={styles.homePage}>
       <div className={styles.mainContent}>
+        <DecorationComponent /> {/* Render the decoration component */}
         <h1>Manage Your Finances Masterfully!</h1>
         <p>
           ExpenseTracker effortlessly empowers you to take control of your finances! 
