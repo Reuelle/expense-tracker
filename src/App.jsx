@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header/Header'; // Import Header
+import Header from './components/Header/Header';
 import HomePage from './components/HomePage/HomePage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
 import AuthorizationPage from './components/AuthorizationPage/AuthorizationPage';
@@ -9,9 +9,8 @@ import MainTransactionPage from './components/MainTransactionPage/MainTransactio
 
 const App = () => (
   <BrowserRouter>
-    <Header /> {/* Add Header here if it should be on all pages */}
+    <Header />
     <Routes>
-      {/* Render HomePage correctly */}
       <Route path="/" element={<HomePage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/authorization" element={<AuthorizationPage />} />
