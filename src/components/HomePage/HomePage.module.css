@@ -3,6 +3,8 @@
   flex-direction: column;
    width: 1440px;
   height: 709px;
+   margin: 0 auto;
+  
 }
 
 .mainContent {
