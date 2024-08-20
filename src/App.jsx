@@ -9,17 +9,14 @@ import MainTransactionPage from './components/MainTransactionPage/MainTransactio
 
 const App = () => (
   <BrowserRouter>
-    
     <Header /> {/* Add Header here if it should be on all pages */}
-        <Routes>
-      <Route path="/" element={() => {
-  console.log('Rendering HomePage');
-  return <HomePage />;}} />
+    <Routes>
+      {/* Render HomePage correctly */}
+      <Route path="/" element={<HomePage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/authorization" element={<AuthorizationPage />} />
       <Route path="/transaction-history" element={<TransactionHistoryPage />} />
       <Route path="/main-transaction" element={<MainTransactionPage />} />
-    
     </Routes>
   </BrowserRouter>
 );
