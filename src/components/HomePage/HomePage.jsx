@@ -2,7 +2,7 @@
 import React from 'react';
 import AuthNav from '../AuthNav/AuthNav';
 import AllUsersTab from '../AllUsersTab/AllUsersTab';
-import Decoration from './components/Decoration/Decoration';
+import Decoration from '../components/Decoration/Decoration';
 
 import styles from './HomePage.module.css'; // Import CSS module for styling
 
