@@ -6,7 +6,7 @@ import styles from './Logo.module.css'; // CSS Module for styling
 
 const Logo = () => {
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuth(); // Use authentication hook to check if user is authenticated
+  //const { isAuthenticated } = useAuth(); // Use authentication hook to check if user is authenticated
 
   const handleClick = () => {
     navigate('/'); // Navigate to HomePage
