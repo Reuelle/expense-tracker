@@ -10,8 +10,8 @@ const HomePage = () => {
    console.log('HomePage component is rendering');
   return (
     <div className={styles.homePage}>
+      <Decoration /> {/* Render the decoration component */}
       <div className={styles.mainContent}>
-        <Decoration /> {/* Render the decoration component */}
         <h1>Manage Your Finances Masterfully!</h1>
         <p>
           ExpenseTracker effortlessly empowers you to take control of your finances! 
