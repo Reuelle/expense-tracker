@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
+import Header from './components/Header/Header'; // Import Header
 import HomePage from './components/HomePage/HomePage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
 import AuthorizationPage from './components/AuthorizationPage/AuthorizationPage';
@@ -9,7 +9,7 @@ import MainTransactionPage from './components/MainTransactionPage/MainTransactio
 
 const App = () => (
   <Router basename="/expense-tracker">
-    <Header /> {/* Ensure Header appears on all pages */}
+    <Header /> {/* Ensure Header is only rendered here */}
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/register" element={<RegisterPage />} />
