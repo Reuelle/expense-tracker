@@ -1,6 +1,7 @@
 /* src/components/Logo/Logo.module.css */
 
 .logoContainer {
+  display: flex;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -9,6 +10,6 @@
 }
 
 .logo {
-  width: 170%; /* Adjust width as needed */
+  width: 226px; /* Adjust width as needed */
   height: auto; /* Maintain aspect ratio */
 }
