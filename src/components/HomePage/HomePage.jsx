@@ -1,5 +1,5 @@
 // src/components/HomePage/HomePage.jsx
-import React from 'react';
+import React, { useEffect }  from 'react';
 import AuthNav from '../AuthNav/AuthNav';
 import AllUsersTab from '../AllUsersTab/AllUsersTab';
 import Decoration from '../Decoration/Decoration';
@@ -8,6 +8,9 @@ import styles from './HomePage.module.css'; // Import CSS module for styling
 
 const HomePage = () => {
    console.log('HomePage component is rendering');
+  useEffect(() => {
+    console.log('HomePage component mounted');
+  }, []);
   return (
     <div className={styles.homePage}>
       <Decoration /> {/* Render the decoration component */}
