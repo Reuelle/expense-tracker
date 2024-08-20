@@ -1,14 +1,13 @@
 // src/components/HomePage/HomePage.jsx
 import React from 'react';
 import AuthNav from '../AuthNav/AuthNav';
-import AllUsersTab from '../AllUsersTab/AllUsersTab'; 
+import AllUsersTab from '../AllUsersTab/AllUsersTab';
 import styles from './HomePage.module.css'; // Import CSS module for styling
 
 const HomePage = () => {
    console.log('HomePage component is rendering');
   return (
     <div className={styles.homePage}>
-      <Header /> {/* Render the Header component */}
       <div className={styles.mainContent}>
         <h1>Manage Your Finances Masterfully!</h1>
         <p>
