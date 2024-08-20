@@ -4,10 +4,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 611px;
+  height: 568px;
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
 }
