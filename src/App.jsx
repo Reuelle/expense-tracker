@@ -12,7 +12,9 @@ const App = () => (
     
     <Header /> {/* Add Header here if it should be on all pages */}
         <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={() => {
+  console.log('Rendering HomePage');
+  return <HomePage />;}} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/authorization" element={<AuthorizationPage />} />
       <Route path="/transaction-history" element={<TransactionHistoryPage />} />
