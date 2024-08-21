@@ -49,6 +49,8 @@
 .navigation {
   margin-top: 15px;
   margin-left: 0; /* Align navigation text with the form */
+  width: 165px;
+  height: auto;
 }
 
 .navLink {
