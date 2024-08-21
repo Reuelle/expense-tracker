@@ -1,8 +1,7 @@
-/* src/components/AuthForm/AuthForm.module.css */
 .authFormContainer {
   max-width: 399px;
   margin: 0 auto;
-  margin-left: 786px; /* Adjusted margin-left */
+  margin-left: 475px; /* Adjusted margin-left */
   padding: 20px;
 }
 
@@ -16,7 +15,7 @@
 }
 
 .fieldWrapper {
-  position: relative; /* To position the toggle button inside the field wrapper */
+  position: relative; /* Make the button absolute within this container */
 }
 
 .formField {
@@ -56,18 +55,21 @@
 }
 
 .navLink {
-  color: rgb(250, 250, 250); /* Updated link color */
+  color: rgb(250, 250, 250); /* Blue link */
   text-decoration: none;
 }
 
 .togglePassword {
   position: absolute;
-  right: 10px;
   top: 50%;
+  right: 10px; /* Adjust position to fit within the field */
   transform: translateY(-50%);
-  background: transparent;
+  background: none;
   border: none;
-  color: #007bff; /* Color of the toggle button */
   cursor: pointer;
-  font-size: 16px;
+}
+
+.passwordIcon {
+  width: 24px; /* Adjust size of the icon */
+  height: 24px; /* Adjust size of the icon */
 }
