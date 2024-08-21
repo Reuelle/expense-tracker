@@ -62,7 +62,7 @@
 .togglePassword {
   position: absolute;
   top: 50%;
-  right: 10px; /* Adjust position to fit within the field */
+  right:80px; /* Adjust position to fit within the field */
   transform: translateY(-50%);
   background: none;
   border: none;
