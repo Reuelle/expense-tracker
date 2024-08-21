@@ -1,56 +1,73 @@
-// src/components/AuthForm/AuthForm.jsx
-import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import styles from './AuthForm.module.css'; // Import the CSS module
+/* src/components/AuthForm/AuthForm.module.css */
+.authFormContainer {
+  max-width: 399px;
+  margin: 0 auto;
+  margin-left: 476px; /* Adjusted margin-left */
+  padding: 20px;
+}
 
-const AuthForm = ({
-  formFields,
-  submitButtonText,
-  initialValues,
-  validationSchema,
-  onSubmit,
-  navigation,
-}) => {
-  return (
-    <div className={styles.authFormContainer}>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={onSubmit}
-      >
-        {() => (
-          <Form className={styles.authForm}>
-            {formFields.map((field) => (
-              <div key={field.name} className={styles.formGroup}>
-                <Field
-                  id={field.name}
-                  name={field.name}
-                  type={field.type}
-                  placeholder={field.placeholder}
-                  className={`${styles.formField} ${
-                    field.isInvalid ? styles.invalid : ''
-                  }`}
-                />
-                <ErrorMessage
-                  name={field.name}
-                  component="div"
-                  className={styles.errorMessage}
-                />
-              </div>
-            ))}
-            <button type="submit" className={styles.submitButton}>
-              {submitButtonText}
-            </button>
-            <div className={styles.navigation}>
-              <a href={navigation.href} className={styles.navLink}>
-                {navigation.text}
-              </a>
-            </div>
-          </Form>
-        )}
-      </Formik>
-    </div>
-  );
-};
+.authForm {
+  display: flex;
+  flex-direction: column;
+}
 
-export default AuthForm;
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.fieldWrapper {
+  position: relative; /* To position the toggle button inside the field wrapper */
+}
+
+.formField {
+  width: 399px;
+  height: 48px;
+  padding: 10px;
+  border: 1px solid rgb(250, 250, 250);
+  border-radius: 12px;
+  color: rgb(250, 250, 250); /* Corrected RGB values */
+  background-color: #0C0D0D; /* Assuming a dark background for contrast */
+  margin-top: 5px; /* Added margin-top */
+}
+
+.invalid {
+  border-color: red;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.875em;
+}
+
+.submitButton {
+  width: 145px;
+  height: 47px;
+  padding: 10px;
+  background-color: #0EF387; /* Light green button */
+  color: #0C0D0D; /* Dark color for the button text */
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.navigation {
+  margin-top: 15px;
+  margin-left: 0; /* Align navigation text with the form */
+}
+
+.navLink {
+  color: rgb(250, 250, 250); /* Updated link color */
+  text-decoration: none;
+}
+
+.togglePassword {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #007bff; /* Color of the toggle button */
+  cursor: pointer;
+  font-size: 16px;
+}
