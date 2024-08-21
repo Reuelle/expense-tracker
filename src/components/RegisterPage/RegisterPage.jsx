@@ -57,7 +57,7 @@ const RegisterPage = () => {
         <Decoration /> {/* Include Decoration component here */}
       <AuthForm
         formFields={formFields}
-        submitButtonText="Register"
+        submitButtonText="Sign Up"
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
