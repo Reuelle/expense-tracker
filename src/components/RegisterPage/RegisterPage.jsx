@@ -3,7 +3,7 @@ import React from 'react';
 import * as Yup from 'yup';
 import AuthForm from '../AuthForm/AuthForm'; // Import AuthForm component
 import AllUsersTab from '../AllUsersTab/AllUsersTab'; // Import AllUsersTab component
-import Decoration from '../Decoration/Decoration';
+import Decoration from '../Decoration/Decoration'; // Import Decoration component
 import styles from './RegisterPage.module.css'; // Import CSS module for styling
 
 // Define form fields, initial values, and validation schema
@@ -53,8 +53,8 @@ const RegisterPage = () => {
         <p className={styles.description}>
           Step into a world of hassle-free expense management! Your journey at your fingertips.
         </p>
+        <Decoration /> {/* Include Decoration component here */}
       </header>
-      <Decoration /> {/* Include Decoration component here */}
       <AuthForm
         formFields={formFields}
         submitButtonText="Register"
