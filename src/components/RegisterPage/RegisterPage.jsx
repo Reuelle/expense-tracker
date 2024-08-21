@@ -12,7 +12,7 @@ const formFields = [
     name: 'name',
     label: 'Name',
     type: 'text',
-    placeholder: 'Enter your name',
+    placeholder: 'name',
   },
   {
     name: 'email',
@@ -24,7 +24,7 @@ const formFields = [
     name: 'password',
     label: 'Password',
     type: 'password',
-    placeholder: 'Enter your password',
+    placeholder: 'password',
   },
 ];
 
