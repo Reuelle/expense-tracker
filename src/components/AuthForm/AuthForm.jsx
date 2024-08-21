@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import styles from './AuthForm.module.css'; // Import the CSS module
+import styles from './AuthForm.module.css';
+import showPasswordIcon from './show-password.png'; // Import show password icon
+import hidePasswordIcon from './hide-password.png'; // Import hide password icon
 
 const AuthForm = ({
   formFields,
@@ -42,9 +44,13 @@ const AuthForm = ({
                       type="button"
                       onClick={handlePasswordToggle}
                       className={styles.togglePassword}
-                      aria-label="Toggle password visibility"
+                      aria-label={passwordVisible ? 'Hide password' : 'Show password'}
                     >
-                      {passwordVisible ? 'Hide' : 'Show'}
+                      <img 
+                        src={passwordVisible ? hidePasswordIcon : showPasswordIcon} 
+                        alt={passwordVisible ? 'Hide password' : 'Show password'} 
+                        className={styles.passwordIcon}
+                      />
                     </button>
                   )}
                 </div>
