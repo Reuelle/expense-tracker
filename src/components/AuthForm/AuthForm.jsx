@@ -1,8 +1,7 @@
 // src/components/AuthForm/AuthForm.jsx
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-//import * as Yup from 'yup';
-import styles from './AuthForm.module.css'; // Optional: For custom styling
+import styles from './AuthForm.module.css'; // Import the CSS module
 
 const AuthForm = ({
   formFields,
@@ -10,7 +9,7 @@ const AuthForm = ({
   initialValues,
   validationSchema,
   onSubmit,
-  navigation
+  navigation,
 }) => {
   return (
     <div className={styles.authFormContainer}>
@@ -23,15 +22,13 @@ const AuthForm = ({
           <Form className={styles.authForm}>
             {formFields.map((field) => (
               <div key={field.name} className={styles.formGroup}>
-                <label htmlFor={field.name}>{field.label}</label>
                 <Field
-                  type={field.type}
                   id={field.name}
                   name={field.name}
+                  type={field.type}
                   placeholder={field.placeholder}
                   className={`${styles.formField} ${
-                    // Apply invalid styling if there's an error
-                    field.error ? styles.invalid : ''
+                    field.isInvalid ? styles.invalid : ''
                   }`}
                 />
                 <ErrorMessage
@@ -44,11 +41,11 @@ const AuthForm = ({
             <button type="submit" className={styles.submitButton}>
               {submitButtonText}
             </button>
-              <div className={styles.navigation}>
-        <a href={navigation.href} className={styles.navLink}>
-          {navigation.text}
-        </a>
-      </div>
+            <div className={styles.navigation}>
+              <a href={navigation.href} className={styles.navLink}>
+                {navigation.text}
+              </a>
+            </div>
           </Form>
         )}
       </Formik>
