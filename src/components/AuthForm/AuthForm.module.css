@@ -2,7 +2,7 @@
 .authFormContainer {
   max-width: 399px;
   margin: 0 auto;
-  margin-left: 475px; /* Adjusted margin-left */
+  margin-left: 476px; /* Adjusted margin-left */
   padding: 20px;
 }
 
@@ -52,6 +52,6 @@
 }
 
 .navLink {
-  color: rgb(250, 250, 250); /* Blue link */
+  color: rgb(250, 250, 250); /* Updated link color */
   text-decoration: none;
 }
