@@ -31,7 +31,7 @@
 }
 
 .errorMessage {
-  color: red;
+  color: blue;
   font-size: 0.875em;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .navigation {
-  margin-top: 15px;
+  margin-top: 10px;
   margin-left: 0; /* Align navigation text with the form */
   width: 165px;
   height: auto;
