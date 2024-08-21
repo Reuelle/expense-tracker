@@ -2,14 +2,19 @@
 .authNav {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .link {
-  margin: 0 10px;
   text-decoration: none;
-  color: #007bff;
+  padding: 10px 20px;
   font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   width: 137px; /* Adjust width as needed */
+  height: 47px;
+   border-radius: 40px;
 }
 
 .link:hover {
@@ -53,18 +58,13 @@
 .signUp {
   background-color: #0EF387; /* Green background */
   color: #0C0D0D; /* White text */
-  width: 137px;
-  height: 47px;
-  border-radius: 40px;
+ 
   
 }
 
 .signIn {
   color: #FAFAFA; /* Green text */
   border: 2px solid rgba(250, 250, 250, 0.4); /* Green border */
-  width: 137px;
-  height: 47px;
-  border-radius: 40px;
   margin-left: 165px;
 }
 
