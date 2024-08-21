@@ -29,12 +29,8 @@
 }
 
 .registerPage form {
-  height: 48px;
   border-radius: 12px;
   width: 149px;
-   margin-left: 155px;
-  color: rgb(2550, 250, 250);
-   border: 1px solid rgb(2550, 250, 250);
 }
 
 .registerPage button {
