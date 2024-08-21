@@ -1,4 +1,4 @@
-/* src/components/AuthNav/AuthNav.module.css */
+
 .authNav {
   display: flex;
   justify-content: center;
@@ -12,15 +12,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-   width: 137px; /* Adjust width as needed */
+  width: 137px; 
   height: 47px;
-   border-radius: 40px;
-    margin: 0;
+  border-radius: 40px;
+  margin: 0;
 }
 
 .link:hover {
   text-decoration: underline;
 }
+
 .header {
   padding: 20px;
   max-width: 1000px;
@@ -30,10 +31,9 @@
   margin-top: 5px;
   border-radius: 10px;
 }
-/* Example styles for the AuthNav component */
 
 .header h4 {
-  color: rgba(250, 250, 250, 0.4);/* Text color for h3 */
+  color: rgba(250, 250, 250, 0.4); 
   font-size: 15px;
   font-weight: bold;
 }
@@ -46,32 +46,29 @@
 }
 
 .header h1 span {
-   color: #0EF387;/* Text color for span with 40% opacity */
+  color: #0EF387; /* Text color for span */
   text-decoration: underline;
 }
 
 .header p {
-   color: rgba(250, 250, 250, 0.4);/* Text color for paragraph */
+  color: rgba(250, 250, 250, 0.4); /* Text color for paragraph */
   font-size: 15px;
   line-height: 1.5;
   margin-top: 20px;
 }
+
 .signUp {
   background-color: #0EF387; /* Green background */
-  color: #0C0D0D; /* White text */
- margin-left: 0;
- 
-  
+  color: #0C0D0D; /* Dark text */
+  margin-right: 12px; /* Space between "Sign Up" and "Sign In" */
 }
 
 .signIn {
-  color: #FAFAFA; /* Green text */
-  border: 2px solid rgba(250, 250, 250, 0.4); /* Green border */
-  margin-left: 12px;
+  color: #FAFAFA; /* White text */
+  border: 2px solid rgba(250, 250, 250, 0.4); /* Light border */
+  margin-left: 0; /* No left margin */
 }
 
 .signUp:hover {
   background-color: #09c574; /* Darker green on hover */
 }
-
-
