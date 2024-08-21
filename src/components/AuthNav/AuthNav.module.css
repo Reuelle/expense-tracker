@@ -21,7 +21,8 @@
   width: 562px;
   height: 351px;
   margin-left: 55px;
-  margin-top: 25px;
+  margin-top: 5px;
+  border-radius: 10px;
 }
 /* Example styles for the AuthNav component */
 
