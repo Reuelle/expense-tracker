@@ -53,8 +53,8 @@ const RegisterPage = () => {
         <p className={styles.description}>
           Step into a world of hassle-free expense management! Your journey at your fingertips.
         </p>
-        <Decoration /> {/* Include Decoration component here */}
       </header>
+        <Decoration /> {/* Include Decoration component here */}
       <AuthForm
         formFields={formFields}
         submitButtonText="Register"
