@@ -16,7 +16,6 @@ const AuthNav = () => {
           tracking and managing expenses, allowing for a stress-free mastery
           over your financial world.
         </p>
-      </header>
       <nav className={styles.authNav}>
         <Link to="/register" className={styles.link}>
           Sign Up
@@ -25,6 +24,7 @@ const AuthNav = () => {
           Sign In
         </Link>
       </nav>
+       </header>
       <div className={styles.content}>
         <AllUsersTab /> {/* Display AllUsersTab component */}
       </div>
