@@ -5,6 +5,7 @@
   height: 709px;
    margin: 0 auto;
    background-color: #0C0D0D;
+  border: 2px solid #0EF387;
 }
 .mainContent {
   flex: 1; /* Allow main content to expand and take available space */
