@@ -2,7 +2,7 @@
 .authFormContainer {
   max-width: 399px;
   margin: 0 auto;
-  margin-left: 395px; /* Only one margin-left is needed */
+  margin-left: 415px; /* Adjusted margin-left to 415px */
   padding: 20px;
 }
 
@@ -13,9 +13,6 @@
 
 .formGroup {
   margin-bottom: 15px;
-   border: 1px solid rgb(250, 250, 250);
-  color: rgb(250, 250, 250); /* Updated to correct RGB values */
-  background-color: #0C0D0D;
 }
 
 .formField {
@@ -24,8 +21,8 @@
   padding: 10px;
   border: 1px solid rgb(250, 250, 250);
   border-radius: 12px;
-  color: rgb(250, 250, 250); /* Updated to correct RGB values */
-  background-color: #0C0D0D; /* Assuming a dark background for contrast */
+  color: rgb(250, 250, 250); /* Text color for better contrast */
+  background-color: #0C0D0D; /* Dark background for contrast */
 }
 
 .invalid {
