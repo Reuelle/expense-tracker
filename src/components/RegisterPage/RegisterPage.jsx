@@ -3,6 +3,7 @@ import React from 'react';
 import * as Yup from 'yup';
 import AuthForm from '../AuthForm/AuthForm'; // Import AuthForm component
 import AllUsersTab from '../AllUsersTab/AllUsersTab'; // Import AllUsersTab component
+import Decoration from '../Decoration/Decoration';
 import styles from './RegisterPage.module.css'; // Import CSS module for styling
 
 // Define form fields, initial values, and validation schema
@@ -47,6 +48,7 @@ const handleSubmit = (values) => {
 const RegisterPage = () => {
   return (
     <div className={styles.registerPage}>
+       <Decoration /> {/* Include Decoration component here */}
       <header className={styles.header}>
         <h1>Sign Up</h1>
         <p className={styles.description}>
