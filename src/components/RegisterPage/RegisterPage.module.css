@@ -31,9 +31,10 @@
 }
 
 .registerPage form {
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
+  height: 48px;
+  border-radius: 12px'
+  width: 399px;
+  margin-left: 786px;
 }
 
 .registerPage button {
