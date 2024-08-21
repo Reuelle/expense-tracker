@@ -15,3 +15,9 @@
 .link:hover {
   text-decoration: underline;
 }
+.header {
+  width: 562px;
+  height: 351px;
+  margin-left: 732px;
+  margin-top: 173px;
+}
