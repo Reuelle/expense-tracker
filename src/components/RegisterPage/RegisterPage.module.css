@@ -1,20 +1,18 @@
-
 .registerPage {
- display: flex;
+  display: flex;
   flex-direction: column;
-   width: 1440px;
+  width: 1440px;
   height: 709px;
-   margin: 0 auto;
-   background-color: #0C0D0D;
+  margin: 0 auto;
+  background-color: #0C0D0D;
 }
 
 .header {
   text-align: center;
   width: 533px;
   height: 123px;
-  margin-left:236px;
-   margin-top: 150px;
-  
+  margin-left: 786px; /* Updated margin-left */
+  margin-top: 150px;
 }
 
 .header h1 {
@@ -32,9 +30,9 @@
 
 .registerPage form {
   height: 48px;
-  border-radius: 12px'
+  border-radius: 12px;
   width: 399px;
-  margin-left: 786px;
+  margin-left: 786px; /* Ensure form aligns with the header */
 }
 
 .registerPage button {
