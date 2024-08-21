@@ -48,13 +48,13 @@ const handleSubmit = (values) => {
 const RegisterPage = () => {
   return (
     <div className={styles.registerPage}>
-       <Decoration /> {/* Include Decoration component here */}
       <header className={styles.header}>
         <h1>Sign Up</h1>
         <p className={styles.description}>
           Step into a world of hassle-free expense management! Your journey at your fingertips.
         </p>
       </header>
+      <Decoration /> {/* Include Decoration component here */}
       <AuthForm
         formFields={formFields}
         submitButtonText="Register"
