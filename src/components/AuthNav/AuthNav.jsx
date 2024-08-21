@@ -1,8 +1,8 @@
 // src/components/AuthNav/AuthNav.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AllUsersTab from '../AllUsersTab/AllUsersTab'; // Import AllUsersTab component
-import styles from './AuthNav.module.css'; // Optional: For custom styling
+import AllUsersTab from '../AllUsersTab/AllUsersTab';
+import styles from './AuthNav.module.css';
 
 const AuthNav = () => {
   return (
@@ -16,17 +16,17 @@ const AuthNav = () => {
           tracking and managing expenses, allowing for a stress-free mastery
           over your financial world.
         </p>
-      <nav className={styles.authNav}>
-        <Link to="/register" className={styles.link}>
-          Sign Up
-        </Link>
-        <Link to="/login" className={styles.link}>
-          Sign In
-        </Link>
-      </nav>
-       </header>
+        <nav className={styles.authNav}>
+          <Link to="/register" className={`${styles.link} ${styles.signUp}`}>
+            Sign Up
+          </Link>
+          <Link to="/login" className={`${styles.link} ${styles.signIn}`}>
+            Sign In
+          </Link>
+        </nav>
+      </header>
       <div className={styles.content}>
-        <AllUsersTab /> {/* Display AllUsersTab component */}
+        <AllUsersTab />
       </div>
     </div>
   );
