@@ -1,7 +1,6 @@
 /* src/components/AuthForm/AuthForm.module.css */
 .authFormContainer {
   max-width: 399px;
-  margin-left: 155px;
   padding: 20px;
 }
 
@@ -12,7 +11,7 @@
 
 .formGroup {
   margin-bottom: 15px;
-   margin-left: 10px;
+   margin-left: 150px;
   
 }
 
