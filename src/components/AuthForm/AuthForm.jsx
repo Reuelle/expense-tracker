@@ -44,14 +44,14 @@ const AuthForm = ({
             <button type="submit" className={styles.submitButton}>
               {submitButtonText}
             </button>
-          </Form>
-        )}
-      </Formik>
-      <div className={styles.navigation}>
+              <div className={styles.navigation}>
         <a href={navigation.href} className={styles.navLink}>
           {navigation.text}
         </a>
       </div>
+          </Form>
+        )}
+      </Formik>
     </div>
   );
 };
