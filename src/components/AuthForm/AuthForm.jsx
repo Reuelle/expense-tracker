@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import styles from './AuthForm.module.css';
-import showPasswordIcon from './show-password.png'; // Import show password icon
-import hidePasswordIcon from './hide-password.png'; // Import hide password icon
+import showPasswordIcon from './eye.png'; // Import show password icon
+import hidePasswordIcon from './hide.png'; // Import hide password icon
 
 const AuthForm = ({
   formFields,
