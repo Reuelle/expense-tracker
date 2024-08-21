@@ -2,6 +2,7 @@
 .authFormContainer {
   max-width: 399px;
   padding: 20px;
+   margin-left: 175px;
 }
 
 .authForm {
