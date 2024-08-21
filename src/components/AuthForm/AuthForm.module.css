@@ -8,6 +8,8 @@
 .authForm {
   display: flex;
   flex-direction: column;
+  width: 100%; /* Ensure full width if needed */
+  max-width: 400px; /* Cap the width to maintain a consistent layout */
 }
 
 .formGroup {
@@ -59,17 +61,16 @@
   text-decoration: none;
 }
 
-.togglePassword {
-  position: absolute;
-  top: 50%;
-  right:80px; /* Adjust position to fit within the field */
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
+.togglePasswordIcon {
+  cursor: pointer;            /* Show pointer cursor */
+  position: absolute;         /* Position the icon absolutely */
+  left: 380px;                /* Align it to the right inside the field */
+  top: 50%;                   /* Center it vertically */
+  transform: translateY(-50%); /* Adjust for vertical centering */
 }
 
+
 .passwordIcon {
-  width: 24px; /* Adjust size of the icon */
-  height: 24px; /* Adjust size of the icon */
+  width: 100%; /* Adjust size of the icon */
+  height: 100%; /* Adjust size of the icon */
 }
