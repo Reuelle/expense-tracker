@@ -50,4 +50,29 @@
   line-height: 1.5;
   margin-top: 20px;
 }
+.signUp {
+  background-color: #0EF387; /* Green background */
+  color: #0C0D0D; /* White text */
+  width: 137px;
+  height: 47px;
+  border-radius: 40px;
+  
+}
+
+.signIn {
+  color: #FAFAFA; /* Green text */
+  border: 2px solid rgba(250, 250, 250, 0.4); /* Green border */
+  width: 137px;
+  height: 47px;
+  border-radius: 40px;
+  margin-left: 165px;
+}
+
+.signUp:hover {
+  background-color: #09c574; /* Darker green on hover */
+}
+
+.signIn:hover {
+  background-color: #e0f7ec; /* Light green on hover */
+}
 
