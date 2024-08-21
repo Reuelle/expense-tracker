@@ -12,19 +12,19 @@ const formFields = [
     name: 'name',
     label: 'Name',
     type: 'text',
-    placeholder: 'name',
+    placeholder: 'Name',
   },
   {
     name: 'email',
     label: 'Email',
     type: 'email',
-    placeholder: 'Enter your email',
+    placeholder: 'Email',
   },
   {
     name: 'password',
     label: 'Password',
     type: 'password',
-    placeholder: 'password',
+    placeholder: 'Password',
   },
 ];
 
