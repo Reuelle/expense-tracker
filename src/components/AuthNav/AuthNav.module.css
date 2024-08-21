@@ -21,3 +21,29 @@
   margin-left: 95px;
   margin-top: 85px;
 }
+/* Example styles for the AuthNav component */
+
+.header h4 {
+  color: rgba(250, 250, 250, 0.4);/* Text color for h3 */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header h1 {
+  color: #FAFAFA; /* Text color for h1 */
+  font-size: 36px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.header h1 span {
+  color: 0EF387; /* Text color for span with 40% opacity */
+}
+
+.header p {
+   color: rgba(250, 250, 250, 0.4);/* Text color for paragraph */
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
