@@ -27,13 +27,13 @@
 
 .header h4 {
   color: rgba(250, 250, 250, 0.4);/* Text color for h3 */
-  font-size: 24px;
+  font-size: 8px;
   font-weight: bold;
 }
 
 .header h1 {
   color: #FAFAFA; /* Text color for h1 */
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   margin: 10px 0;
 }
