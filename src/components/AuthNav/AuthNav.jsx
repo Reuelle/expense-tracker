@@ -9,7 +9,7 @@ const AuthNav = () => {
     <div className={styles.homePage}>
       <header className={styles.header}>
         <h3>EXPENSE LOG</h3>
-        <h1>Manage Your Finances Masterfully!</h1>
+        <h1>Manage Your<span>Finances</span> Masterfully!</h1>
         <p>
           ExpenseTracker effortlessly empowers you to take control of your
           finances! With intuitive features, it simplifies the process of
