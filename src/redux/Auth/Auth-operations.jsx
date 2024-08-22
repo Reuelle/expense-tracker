@@ -59,3 +59,18 @@ export const fetchCurrentUser = createAsyncThunk(
     }
   }
 );
+// Register User operation
+export const registerUser = createAsyncThunk(
+  'auth/registerUser',
+  async (userData, { rejectWithValue, dispatch }) => {
+    try {
+      const { data } = await axios.post('/auth/register', userData);
+      setAuthToken(data.token);
+      dispatch(setUser(data.user)); // Using setUser from Auth-slice
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+export { logIn, logOut, fetchCurrentUser, registerUser };

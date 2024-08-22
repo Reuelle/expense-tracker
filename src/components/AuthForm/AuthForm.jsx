@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
-import { registerUser } from '../../redux/Auth/Auth-operations'; // Import the Redux operation
 import styles from './AuthForm.module.css';
 import showPasswordIcon from './icons-show.png';
 import hidePasswordIcon from './icons8-hide.png';
+import { registerUser, logIn, logOut, fetchCurrentUser } from '../../redux/Auth/Auth-operations';
+
 
 const AuthForm = ({
   formFields,

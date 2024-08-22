@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-//import Notiflix from 'notiflix';
+import Notiflix from 'notiflix';
 import styles from './TransactionForm.module.css';
 import CategoriesModal from '../CategoriesModal/CategoriesModal'; // Import your CategoriesModal
 
@@ -37,10 +37,10 @@ const TransactionForm = ({ onSubmit }) => {
     onSubmit(values)
       .then(() => {
         resetForm();
-        //Notiflix.Notify.success('Transaction added successfully!');
+        Notiflix.Notify.success('Transaction added successfully!');
       })
       .catch(() => {
-        //Notiflix.Notify.failure('Failed to add transaction.');
+        Notiflix.Notify.failure('Failed to add transaction.');
       });
   };
 
