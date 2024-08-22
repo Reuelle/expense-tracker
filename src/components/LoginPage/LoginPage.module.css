@@ -17,14 +17,13 @@
 }
 
 .pageHeader h1 {
-  font-size: 24px;
+  font-size: 30px;
   color: #FAFAFA;
 }
 
 .pageDescription {
-  margin-bottom: 30px;
-  text-align: center;
-  color: #666;
+  margin-bottom: 20px;
+  color: color: rgb(2550, 250, 250);;
 }
 
 .pageDescription p {
