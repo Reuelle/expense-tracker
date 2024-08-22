@@ -37,10 +37,10 @@ const TransactionForm = ({ onSubmit }) => {
     onSubmit(values)
       .then(() => {
         resetForm();
-        Notiflix.Notify.success('Transaction added successfully!');
+        //Notiflix.Notify.success('Transaction added successfully!');
       })
       .catch(() => {
-        Notiflix.Notify.failure('Failed to add transaction.');
+        //Notiflix.Notify.failure('Failed to add transaction.');
       });
   };
 
