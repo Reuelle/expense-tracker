@@ -1,20 +1,18 @@
 /* src/components/LoginPage/LoginPage.module.css */
 .loginPage {
-   display: flex;
+  display: flex;
   flex-direction: column;
-   width: 1440px;
+  align-items: center; /* Center elements horizontally */
+  width: 1440px;
   height: 709px;
-   margin: 0 auto;
-   background-color: #0C0D0D;
+  margin: 0 auto;
+  background-color: #0C0D0D;
 }
 
 .pageHeader {
   width: 419px;
-  height: 123px;
-  margin-left: 786px;
   text-align: center;
-  margin-bottom:0;
-  
+  margin-bottom: 10px; /* Adjust this value to reduce space */
 }
 
 .pageHeader h1 {
@@ -23,14 +21,11 @@
 }
 
 .pageDescription {
-  margin-bottom: 20px;
-   width: 419px;
-  margin-left: 789px;
-  margin-top:0;
+  width: 419px;
+  text-align: center; /* Center the text if desired */
   color: rgb(250, 250, 250);
 }
 
 .pageDescription p {
   font-size: 16px;
-   
 }
