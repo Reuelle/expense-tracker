@@ -22,10 +22,10 @@ const LoginPage = () => {
       <Decoration /> {/* Render the Decoration component */}
       <header className={styles.pageHeader}>
         <h1>Sign In</h1>
-         </header>
       <div className={styles.pageDescription}>
         <p>Welcome back to effortless expense tracking! Your financial dashboard awaits.</p>
       </div>
+      </header>
       <AuthForm
         formFields={[
           { name: 'email', type: 'email', placeholder: 'Email' },
