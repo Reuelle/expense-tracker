@@ -1,17 +1,20 @@
+/* src/components/RegisterPage/RegisterPage.module.css */
 .registerPage {
   display: flex;
   flex-direction: column;
-  width: 1440px;
-  height: 709px;
+  align-items: center; /* Center content horizontally */
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   background-color: #0C0D0D;
+  padding: 20px; /* Add padding for spacing */
 }
 
 .header {
-  width: 533px;
-  height: 123px;
-  margin-left: 786px; /* Updated margin-left */
-  margin-top: 78px;
+  width: 100%; /* Full width to align centrally */
+  max-width: 600px; /* Adjust max-width */
+  text-align: center; /* Center-align text */
+  margin-top: 78px; /* Top margin for spacing */
 }
 
 .header h1 {
@@ -23,17 +26,20 @@
 .description {
   font-size: 16px;
   color: #666;
-  max-width: 600px;
-  margin: 0 auto;
+  margin-top: 10px; /* Margin for spacing */
 }
 
 .registerPage form {
+  width: 100%;
+  max-width: 500px; /* Adjust based on design needs */
   border-radius: 12px;
-  width: 149px;
+  padding: 20px; /* Add padding inside the form */
+  background-color: #1e1e1e; /* Background color for contrast */
 }
 
 .registerPage button {
-  width: 145px;
+  width: 100%;
+  max-width: 145px; /* Adjust button width */
   height: 47px;
   padding: 10px;
   font-size: 16px;
@@ -43,6 +49,7 @@
   border-radius: 40px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 20px; /* Add margin for spacing */
 }
 
 .registerPage button:hover {
@@ -53,7 +60,7 @@
   display: block;
   text-align: center;
   margin-top: 15px;
-  color: rgb(2550, 250, 250);
+  color: rgb(250, 250, 250);
   text-decoration: none;
 }
 
