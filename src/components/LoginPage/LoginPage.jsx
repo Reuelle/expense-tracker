@@ -20,6 +20,7 @@ const LoginPage = () => {
   return (
     <div className={styles.loginPage}>
       <Decoration /> {/* Render the Decoration component */}
+      <header className={styles.pageHeader}>
         <h1>Login to Your Account</h1>
       </header>
       <div className={styles.pageDescription}>
