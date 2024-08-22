@@ -13,7 +13,7 @@
 }
 
 .formGroup {
-  margin-bottom: 55px;
+  margin-bottom: 20px;
 }
 
 .fieldWrapper {
@@ -29,6 +29,7 @@
   color: rgb(250, 250, 250); /* Corrected RGB values */
   background-color: #0C0D0D; /* Assuming a dark background for contrast */
   margin-top: 5px; /* Added margin-top */
+  margin-bottom: 55px;
 }
 
 .invalid {
