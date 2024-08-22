@@ -21,7 +21,7 @@ const LoginPage = () => {
     <div className={styles.loginPage}>
       <Decoration /> {/* Render the Decoration component */}
       <header className={styles.pageHeader}>
-        <h1>Login to Your Account</h1>
+        <h1>Sign In</h1>
       </header>
       <div className={styles.pageDescription}>
         <p>Welcome back to effortless expense tracking! Your financial dashboard awaits.</p>
