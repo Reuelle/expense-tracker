@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useDispatch } from 'react-redux';
+import { registerUser } from '../../redux/Auth/auth-operations'; // Import the Redux operation
 import styles from './AuthForm.module.css';
-import showPasswordIcon from './icons-show.png'; // Show password icon
-import hidePasswordIcon from './icons8-hide.png'; // Hide password icon
+import showPasswordIcon from './icons-show.png';
+import hidePasswordIcon from './icons8-hide.png';
 
 const AuthForm = ({
   formFields,
   submitButtonText,
   initialValues,
   validationSchema,
-  onSubmit,
   navigation,
 }) => {
+  const dispatch = useDispatch();
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const handlePasswordToggle = () => {
-    setPasswordVisible(prev => !prev); // Toggle password visibility
+    setPasswordVisible(prev => !prev);
+  };
+
+  const handleSubmit = (values) => {
+    dispatch(registerUser(values)); // Dispatch the Redux operation
   };
 
   return (
@@ -23,7 +29,7 @@ const AuthForm = ({
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={onSubmit}
+        onSubmit={handleSubmit} // Connect onSubmit to Redux
       >
         {() => (
           <Form className={styles.authForm}>
