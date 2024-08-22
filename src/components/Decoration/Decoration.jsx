@@ -9,7 +9,7 @@ const DecorationComponent = () => (
       className={styles.backgroundImage} 
       style={{ backgroundImage: `url(${backgroundImg})` }}
     ></div>
-    <div className={styles.decorationTab}>Decoration Tab</div>
+    <div className={styles.decorationTab}></div>
   </div>
 );
 
