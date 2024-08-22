@@ -22,7 +22,9 @@ const AuthForm = ({
   };
 
   const handleSubmit = (values) => {
-    dispatch(registerUser(values)); // Dispatch the Redux operation
+    dispatch(registerUser(values)); // Ensure this is the intended operation
+    // Or if you need to log in instead:
+    // dispatch(signIn(values));
   };
 
   return (
@@ -30,7 +32,7 @@ const AuthForm = ({
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={handleSubmit} // Connect onSubmit to Redux
+        onSubmit={handleSubmit}
       >
         {() => (
           <Form className={styles.authForm}>

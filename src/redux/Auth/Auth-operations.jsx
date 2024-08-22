@@ -1,11 +1,10 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { setUser } from './Auth-slice'; // Adjusted import
+import { setUser } from './Auth-slice';
 
-// Set up your API base URL
-axios.defaults.baseURL = 'https://expense-tracker.b.goit.study/api-docs/';
+// Set the base URL to the root of your API
+axios.defaults.baseURL = 'https://expense-tracker.b.goit.study/api';
 
-// Utility to set authorization token
 const setAuthToken = (token) => {
   if (token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -14,14 +13,14 @@ const setAuthToken = (token) => {
   }
 };
 
-// Log In operation
-export const logIn = createAsyncThunk(
+// Login action
+const logIn = createAsyncThunk(
   'auth/logIn',
   async (credentials, { rejectWithValue, dispatch }) => {
     try {
       const { data } = await axios.post('/auth/login', credentials);
       setAuthToken(data.token);
-      dispatch(setUser(data.user)); // Using setUser from Auth-slice
+      dispatch(setUser(data.user));
       return data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -29,18 +28,21 @@ export const logIn = createAsyncThunk(
   }
 );
 
-// Log Out operation
-export const logOut = createAsyncThunk('auth/logOut', async (_, { rejectWithValue }) => {
-  try {
-    await axios.post('/auth/logout');
-    setAuthToken(null);
-  } catch (error) {
-    return rejectWithValue(error.response.data);
+// Logout action
+const logOut = createAsyncThunk(
+  'auth/logOut',
+  async (_, { rejectWithValue }) => {
+    try {
+      await axios.post('/auth/logout');
+      setAuthToken(null);
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
   }
-});
+);
 
-// Get Current User operation
-export const fetchCurrentUser = createAsyncThunk(
+// Fetch current user action
+const fetchCurrentUser = createAsyncThunk(
   'auth/fetchCurrentUser',
   async (_, { getState, rejectWithValue }) => {
     const state = getState();
@@ -59,18 +61,20 @@ export const fetchCurrentUser = createAsyncThunk(
     }
   }
 );
-// Register User operation
-export const registerUser = createAsyncThunk(
+
+// Register user action
+const registerUser = createAsyncThunk(
   'auth/registerUser',
   async (userData, { rejectWithValue, dispatch }) => {
     try {
       const { data } = await axios.post('/auth/register', userData);
       setAuthToken(data.token);
-      dispatch(setUser(data.user)); // Using setUser from Auth-slice
+      dispatch(setUser(data.user));
       return data;
     } catch (error) {
       return rejectWithValue(error.response.data);
     }
   }
 );
+
 export { logIn, logOut, fetchCurrentUser, registerUser };

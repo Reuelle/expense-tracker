@@ -1,6 +1,6 @@
 // src/components/WelcomePage/WelcomePage.jsx
 import React from 'react';
-import DecorationComponent from '../DecorationComponent/DecorationComponent';
+import DecorationComponent from '../Decoration/Decoration';
 import styles from './WelcomePage.module.css';
 
 const WelcomePage = () => (
