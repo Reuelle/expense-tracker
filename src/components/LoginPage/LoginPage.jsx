@@ -22,14 +22,14 @@ const LoginPage = () => {
         <h1>Login to Your Account</h1>
       </header>
       <div className={styles.pageDescription}>
-        <p>Please enter your email and password to log in.</p>
+        <p>Welcome back to effortless expense tracking!Your financial dashboard awaits.</p>
       </div>
       <AuthForm
         formFields={[
           { name: 'email', type: 'email', placeholder: 'Email' },
           { name: 'password', type: 'password', placeholder: 'Password' },
         ]}
-        submitButtonText="Log In"
+        submitButtonText="Sign In"
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
