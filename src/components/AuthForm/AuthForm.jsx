@@ -15,7 +15,7 @@ const AuthForm = ({
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const handlePasswordToggle = () => {
-    setPasswordVisible(!passwordVisible);
+    setPasswordVisible(prev => !prev); // Toggle password visibility
   };
 
   return (
@@ -27,7 +27,7 @@ const AuthForm = ({
       >
         {() => (
           <Form className={styles.authForm}>
-            {formFields.map((field) => (
+            {formFields.map(field => (
               <div key={field.name} className={styles.formGroup}>
                 <div className={styles.fieldWrapper}>
                   <Field
@@ -35,9 +35,7 @@ const AuthForm = ({
                     name={field.name}
                     type={field.type === 'password' && passwordVisible ? 'text' : field.type}
                     placeholder={field.placeholder}
-                    className={`${styles.formField} ${
-                      field.isInvalid ? styles.invalid : ''
-                    }`}
+                    className={`${styles.formField} ${field.isInvalid ? styles.invalid : ''}`}
                   />
                   {field.type === 'password' && (
                     <img
