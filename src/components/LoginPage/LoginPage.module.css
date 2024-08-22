@@ -1,9 +1,11 @@
 /* src/components/LoginPage/LoginPage.module.css */
 .loginPage {
-  display: flex;
+   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
+   width: 1440px;
+  height: 709px;
+   margin: 0 auto;
+   background-color: #0C0D0D;
 }
 
 .pageHeader {
