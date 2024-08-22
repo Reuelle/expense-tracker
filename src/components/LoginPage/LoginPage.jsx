@@ -1,6 +1,7 @@
 // src/components/LoginPage/LoginPage.jsx
 import React from 'react';
 import AuthForm from '../AuthForm/AuthForm'; // Adjust the import path as needed
+import Decoration from '../Decoration/Decoration'; // Import the Decoration component
 import styles from './LoginPage.module.css'; // Import CSS module for styling
 
 const LoginPage = () => {
@@ -18,11 +19,11 @@ const LoginPage = () => {
 
   return (
     <div className={styles.loginPage}>
-      <header className={styles.pageHeader}>
+      <Decoration /> {/* Render the Decoration component */}
         <h1>Login to Your Account</h1>
       </header>
       <div className={styles.pageDescription}>
-        <p>Welcome back to effortless expense tracking!Your financial dashboard awaits.</p>
+        <p>Welcome back to effortless expense tracking! Your financial dashboard awaits.</p>
       </div>
       <AuthForm
         formFields={[
@@ -40,4 +41,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-
