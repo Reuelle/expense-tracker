@@ -11,7 +11,8 @@
 
 .pageHeader {
   width: 419px;
-  margin-bottom: 10px; /* Adjust this value to reduce space */
+  margin-bottom: 0; /* Adjust this value to reduce space */
+  margin-left: 786px;
 }
 
 .pageHeader h1 {
