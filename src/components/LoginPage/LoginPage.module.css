@@ -9,8 +9,11 @@
 }
 
 .pageHeader {
-  margin-bottom: 20px;
+  width: 419px;
+  height: 123px;
+  margin-left: 786px;
   text-align: center;
+  
 }
 
 .pageHeader h1 {
