@@ -1,10 +1,11 @@
 // src/components/RegisterPage/RegisterPage.jsx
 import React from 'react';
-import * as Yup from 'yup';
-import AuthForm from '../AuthForm/AuthForm'; // Import AuthForm component
-import AllUsersTab from '../AllUsersTab/AllUsersTab'; // Import AllUsersTab component
-import Decoration from '../Decoration/Decoration'; // Import Decoration component
-import styles from './RegisterPage.module.css'; // Import CSS module for styling
+import * as Yup from 'yup'; // Import Yup for validation schema
+import AuthForm from '../AuthForm/AuthForm'; 
+import AllUsersTab from '../AllUsersTab/AllUsersTab'; 
+import Decoration from '../Decoration/Decoration'; 
+import TransactionForm from '../TransactionForm/TransactionForm'; 
+import styles from './RegisterPage.module.css'; 
 
 // Define form fields, initial values, and validation schema
 const formFields = [
@@ -42,7 +43,6 @@ const validationSchema = Yup.object({
 
 const handleSubmit = (values) => {
   console.log('Form values:', values);
-  // Handle form submission here
 };
 
 const RegisterPage = () => {
@@ -54,7 +54,7 @@ const RegisterPage = () => {
           Step into a world of hassle-free expense management! Your journey at your fingertips.
         </p>
       </header>
-        <Decoration /> {/* Include Decoration component here */}
+      <Decoration />
       <AuthForm
         formFields={formFields}
         submitButtonText="Sign Up"
@@ -63,7 +63,8 @@ const RegisterPage = () => {
         onSubmit={handleSubmit}
         navigation={{ href: '/login', text: 'Already have an account? Sign In' }}
       />
-      <AllUsersTab /> {/* Render AllUsersTab component */}
+      <TransactionForm />
+      <AllUsersTab />
     </div>
   );
 };
