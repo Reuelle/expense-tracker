@@ -54,7 +54,7 @@ const fetchCurrentUser = createAsyncThunk(
 
     try {
       setAuthToken(persistedToken);
-      const { data } = await axios.get('/auth/current');
+      const { data } = await axios.get('auth/current');
       return data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -74,6 +74,7 @@ const registerUser = createAsyncThunk(
     } catch (error) {
       return rejectWithValue(error.response.data);
     }
+    
   }
 );
 
