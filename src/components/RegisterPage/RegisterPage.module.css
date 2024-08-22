@@ -14,7 +14,7 @@
   width: 100%; /* Full width to align centrally */
   max-width: 600px; /* Adjust max-width */
   text-align: center; /* Center-align text */
-  margin-top: 78px; /* Top margin for spacing */
+  margin-top: 25px; /* Top margin for spacing */
 }
 
 .header h1 {
@@ -34,7 +34,6 @@
   max-width: 500px; /* Adjust based on design needs */
   border-radius: 12px;
   padding: 20px; /* Add padding inside the form */
-  background-color: #1e1e1e; /* Background color for contrast */
 }
 
 .registerPage button {
