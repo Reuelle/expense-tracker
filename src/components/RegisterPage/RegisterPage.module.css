@@ -2,20 +2,15 @@
 .registerPage {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  background-color: #0C0D0D;
-  padding: 20px; /* Add padding for spacing */
+   width: 1440px;
+  height: 709px;
+   margin: 0 auto;
+   background-color: #0C0D0D;
 }
-
 .header {
-  width: 100%; /* Full width to align centrally */
-  max-width: 600px; /* Adjust max-width */
-  text-align: center; /* Center-align text */
+  width: 600px; /* Adjust max-width */
   margin-top: 25px; /* Top margin for spacing */
-   margin-left: 344px; 
+   margin-left: 821px; 
 }
 
 .header h1 {
