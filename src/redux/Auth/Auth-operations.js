@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { setUser } from './Auth-slice';
 
 // Set the base URL to the root of your API
-axios.defaults.baseURL = 'https://expense-tracker.b.goit.study/';
+axios.defaults.baseURL = 'https://expense-tracker.b.goit.study/api/';
 
 const setAuthToken = (token) => {
   if (token) {
@@ -72,6 +72,9 @@ const registerUser = createAsyncThunk(
       dispatch(setUser(data.user));
       return data;
     } catch (error) {
+      if (error.response && error.response.status === 409) {
+        return rejectWithValue('User already exists. Please try logging in.');
+      }
       return rejectWithValue(error.response.data);
     }
     
