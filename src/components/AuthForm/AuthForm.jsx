@@ -13,6 +13,7 @@ const AuthForm = ({
   initialValues,
   validationSchema,
   navigation,
+  formType,
 }) => {
   const dispatch = useDispatch();
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -21,10 +22,20 @@ const AuthForm = ({
     setPasswordVisible(prev => !prev);
   };
 
-  const handleSubmit = (values) => {
-    dispatch(registerUser(values)); // Ensure this is the intended operation
-    // Or if you need to log in instead:
-    // dispatch(signIn(values));
+  const handleSubmit = async (values, { setErrors }) => {
+    try {
+      if (formType === 'register') {
+        await dispatch(registerUser(values));
+        // Handle successful registration
+      } else if (formType === 'login') {
+        await dispatch(logIn(values));
+        // Handle successful login
+      }
+    } catch (error) {
+      // Set form errors if registration fails
+      setErrors({ [error.field]: error.message });
+      console.error('Form submission error:', error);
+    }
   };
 
   return (
@@ -34,7 +45,7 @@ const AuthForm = ({
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {() => (
+        {({ errors }) => (
           <Form className={styles.authForm}>
             {formFields.map(field => (
               <div key={field.name} className={styles.formGroup}>
@@ -45,7 +56,7 @@ const AuthForm = ({
                     type={field.type === 'password' && passwordVisible ? 'text' : field.type}
                     placeholder={field.placeholder}
                     autoComplete={field.type === 'password' ? 'current-password' : 'off'}
-                    className={`${styles.formField} ${field.isInvalid ? styles.invalid : ''}`}
+                    className={`${styles.formField} ${errors[field.name] ? styles.invalid : ''}`}
                   />
                   {field.type === 'password' && (
                     <img
