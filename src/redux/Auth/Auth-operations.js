@@ -14,7 +14,7 @@ const setAuthToken = (token) => {
 };
 
 // Login action
-const signIn = createAsyncThunk(
+const logIn = createAsyncThunk(
   'auth/logIn',
   async (credentials, { rejectWithValue, dispatch }) => {
     try {
@@ -64,7 +64,7 @@ const fetchCurrentUser = createAsyncThunk(
 
 // Register user action
 const registerUser = createAsyncThunk(
-  'auth/registerUser',
+  'auth/register',
   async (userData, { rejectWithValue, dispatch }) => {
     try {
       const { data } = await axios.post('/auth/register', userData);
@@ -79,4 +79,4 @@ const registerUser = createAsyncThunk(
 );
 
 // Export actions
-export { signIn, logOut, fetchCurrentUser, registerUser };
+export { logIn, logOut, fetchCurrentUser, registerUser };
