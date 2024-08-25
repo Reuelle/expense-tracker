@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { setUser } from './Auth-slice';
 
 // Set the base URL to the root of your API
-axios.defaults.baseURL = 'https://expense-tracker.b.goit.study/api/';
+axios.defaults.baseURL = 'https://expense-tracker.b.goit.study/api-docs/';
 
 const setAuthToken = (token) => {
   if (token) {
@@ -14,7 +14,7 @@ const setAuthToken = (token) => {
 };
 
 // Login action
-const SignIn = createAsyncThunk(
+const logIn = createAsyncThunk(
   'auth/logIn',
   async (credentials, { rejectWithValue, dispatch }) => {
     try {
@@ -54,7 +54,7 @@ const fetchCurrentUser = createAsyncThunk(
 
     try {
       setAuthToken(persistedToken);
-      const { data } = await axios.get('/auth/current'); // Ensure this endpoint is correct
+      const { data } = await axios.get('/auth/current');
       return data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -78,4 +78,5 @@ const registerUser = createAsyncThunk(
   }
 );
 
-export { SignIn, logOut, fetchCurrentUser, registerUser };
+// Export actions
+export { logIn, logOut, fetchCurrentUser, registerUser };
