@@ -72,10 +72,10 @@ const registerUser = createAsyncThunk(
       dispatch(setUser(data.user));
       return data;
     } catch (error) {
-      if (error.response && error.response.status === 409) {
-        return rejectWithValue('User already exists. Please try logging in.');
-      }
+      console.error('Registration error:', error.response.data);
       return rejectWithValue(error.response.data);
+      }
+      
     }
     
   }
