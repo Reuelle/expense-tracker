@@ -14,7 +14,7 @@ const setAuthToken = (token) => {
 };
 
 // Login action
-const logIn = createAsyncThunk(
+const signIn = createAsyncThunk(
   'auth/logIn',
   async (credentials, { rejectWithValue, dispatch }) => {
     try {
@@ -79,4 +79,4 @@ const registerUser = createAsyncThunk(
 );
 
 // Export actions
-export { logIn, logOut, fetchCurrentUser, registerUser };
+export { signIn, logOut, fetchCurrentUser, registerUser };
