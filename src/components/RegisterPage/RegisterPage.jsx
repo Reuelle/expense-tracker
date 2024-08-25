@@ -1,3 +1,4 @@
+
 // src/components/RegisterPage/RegisterPage.jsx
 import React from 'react';
 import * as Yup from 'yup'; // Import Yup for validation schema
@@ -5,6 +6,7 @@ import AuthForm from '../AuthForm/AuthForm';
 import AllUsersTab from '../AllUsersTab/AllUsersTab'; 
 import Decoration from '../Decoration/Decoration'; 
 import TransactionForm from '../TransactionForm/TransactionForm'; 
+import { registerUser } from '../../redux/auth/auth-operations';
 import styles from './RegisterPage.module.css'; 
 
 // Define form fields, initial values, and validation schema
@@ -43,6 +45,7 @@ const validationSchema = Yup.object({
 
 const handleSubmit = (values) => {
   console.log('Form values:', values);
+  dispatch(registerUser(values));
 };
 
 const RegisterPage = () => {
