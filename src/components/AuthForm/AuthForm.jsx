@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import styles from './AuthForm.module.css';
 import showPasswordIcon from './icons-show.png';
 import hidePasswordIcon from './icons8-hide.png';
-import { registerUser, logIn } from '../../redux/Auth/Auth-operations'; // Import signIn
+import { registerUser, logIn } from '../../redux/Auth/Auth-operations'; // Ensure logIn is imported
 
 const AuthForm = ({
   formFields,
@@ -12,7 +12,7 @@ const AuthForm = ({
   initialValues,
   validationSchema,
   navigation,
-  formType, // Add formType prop here
+  formType, // Ensure formType prop is passed
 }) => {
   const dispatch = useDispatch();
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -25,7 +25,7 @@ const AuthForm = ({
     if (formType === 'register') {
       dispatch(registerUser(values));
     } else if (formType === 'login') {
-      dispatch(signIn(values));
+      dispatch(logIn(values)); // Use logIn instead of signIn
     }
   };
 
