@@ -1,10 +1,12 @@
 // src/components/RegisterPage/RegisterPage.jsx
 import React from 'react';
 import * as Yup from 'yup'; // Import Yup for validation schema
+import { useDispatch } from 'react-redux'; // Import useDispatch
 import AuthForm from '../AuthForm/AuthForm'; 
 import AllUsersTab from '../AllUsersTab/AllUsersTab'; 
 import Decoration from '../Decoration/Decoration'; 
 import TransactionForm from '../TransactionForm/TransactionForm'; 
+import { registerUser } from '../../redux/Auth/Auth-operations';
 import styles from './RegisterPage.module.css'; 
 
 // Define form fields, initial values, and validation schema
@@ -41,11 +43,14 @@ const validationSchema = Yup.object({
   password: Yup.string().min(6, 'Password must be at least 6 characters').required('Required'),
 });
 
-const handleSubmit = (values) => {
-  console.log('Form values:', values);
-};
-
 const RegisterPage = () => {
+  const dispatch = useDispatch(); // Initialize dispatch
+  
+  const handleSubmit = (values) => {
+    console.log('Form values:', values);
+    dispatch(registerUser(values)); // Dispatch the action with form values
+  };
+
   return (
     <div className={styles.registerPage}>
       <header className={styles.header}>

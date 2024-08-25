@@ -54,7 +54,7 @@ const fetchCurrentUser = createAsyncThunk(
 
     try {
       setAuthToken(persistedToken);
-      const { data } = await axios.get('auth/current');
+      const { data } = await axios.get('/auth/current');
       return data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -72,13 +72,11 @@ const registerUser = createAsyncThunk(
       dispatch(setUser(data.user));
       return data;
     } catch (error) {
-      if (error.response && error.response.status === 409) {
-        return rejectWithValue('User already exists. Please try logging in.');
-      }
-      return rejectWithValue(error.response.data);
+      console.error('Registration error:', error.response.data);
+       return rejectWithValue(error.response.data.message || 'Registration failed');
     }
-    
   }
 );
 
+// Export actions
 export { logIn, logOut, fetchCurrentUser, registerUser };
