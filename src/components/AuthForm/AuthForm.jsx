@@ -22,9 +22,13 @@ const AuthForm = ({
   };
 
   const handleSubmit = (values) => {
+    if (formType === 'register') {
     dispatch(registerUser(values)); // Ensure this is the intended operation
+       } else {
+    dispatch(signIn(values));
     // Or if you need to log in instead:
     // dispatch(signIn(values));
+    }
   };
 
   return (
@@ -45,7 +49,8 @@ const AuthForm = ({
                     type={field.type === 'password' && passwordVisible ? 'text' : field.type}
                     placeholder={field.placeholder}
                     className={`${styles.formField} ${field.isInvalid ? styles.invalid : ''}`}
-                  />
+                  autoComplete={field.name === 'password' ? 'current-password' : 'on'}
+                    />
                   {field.type === 'password' && (
                     <img
                       src={passwordVisible ? hidePasswordIcon : showPasswordIcon}
