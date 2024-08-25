@@ -64,7 +64,7 @@ const fetchCurrentUser = createAsyncThunk(
 
 // Register user action
 const registerUser = createAsyncThunk(
-  'auth/register',
+  'auth/registerUser',
   async (userData, { rejectWithValue, dispatch }) => {
     try {
       const { data } = await axios.post('/auth/register', userData);
