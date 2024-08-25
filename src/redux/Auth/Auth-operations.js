@@ -77,8 +77,6 @@ const registerUser = createAsyncThunk(
       }
       
     }
-    
-  }
 );
 
 export { logIn, logOut, fetchCurrentUser, registerUser };
