@@ -6,7 +6,7 @@ import AuthForm from '../AuthForm/AuthForm';
 import AllUsersTab from '../AllUsersTab/AllUsersTab'; 
 import Decoration from '../Decoration/Decoration'; 
 import TransactionForm from '../TransactionForm/TransactionForm'; 
-import { registerUser } from '../../redux/auth/auth-operations';
+import { registerUser } from '../../redux/Auth/Auth-operations';
 import styles from './RegisterPage.module.css'; 
 
 // Define form fields, initial values, and validation schema
