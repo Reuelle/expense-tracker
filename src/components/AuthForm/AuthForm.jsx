@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import styles from './AuthForm.module.css';
 import showPasswordIcon from './icons-show.png';
 import hidePasswordIcon from './icons8-hide.png';
-import { registerUser } from '../../redux/Auth/Auth-operations';
+import { registerUser, logIn } from '../../redux/Auth/Auth-operations';
 
 const AuthForm = ({
   formFields,
