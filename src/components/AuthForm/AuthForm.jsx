@@ -4,8 +4,7 @@ import { useDispatch } from 'react-redux';
 import styles from './AuthForm.module.css';
 import showPasswordIcon from './icons-show.png';
 import hidePasswordIcon from './icons8-hide.png';
-import { registerUser } from '../../redux/Auth/Auth-operations';
-
+import { registerUser, signIn } from '../../redux/Auth/Auth-operations'; // Import signIn
 
 const AuthForm = ({
   formFields,
@@ -13,6 +12,7 @@ const AuthForm = ({
   initialValues,
   validationSchema,
   navigation,
+  formType, // Add formType prop here
 }) => {
   const dispatch = useDispatch();
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -23,11 +23,9 @@ const AuthForm = ({
 
   const handleSubmit = (values) => {
     if (formType === 'register') {
-    dispatch(registerUser(values)); // Ensure this is the intended operation
-       } else {
-    dispatch(signIn(values));
-    // Or if you need to log in instead:
-    // dispatch(signIn(values));
+      dispatch(registerUser(values));
+    } else if (formType === 'login') {
+      dispatch(signIn(values));
     }
   };
 
@@ -49,8 +47,7 @@ const AuthForm = ({
                     type={field.type === 'password' && passwordVisible ? 'text' : field.type}
                     placeholder={field.placeholder}
                     className={`${styles.formField} ${field.isInvalid ? styles.invalid : ''}`}
-                  autoComplete={field.name === 'password' ? 'current-password' : 'on'}
-                    />
+                  />
                   {field.type === 'password' && (
                     <img
                       src={passwordVisible ? hidePasswordIcon : showPasswordIcon}
