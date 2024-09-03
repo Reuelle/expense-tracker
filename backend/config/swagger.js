@@ -10,7 +10,7 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:4040/', // Update with your server URL
+        url: 'http://localhost:3000/', // Update with your server URL
       },
     ],
   },
