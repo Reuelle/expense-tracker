@@ -5,8 +5,7 @@ const swaggerSpec = require('./config/swagger'); // Import the Swagger specifica
 const app = express();
 
 // Serve Swagger UI at /api-docs endpoint
-app.use('https://expense-tracker.b.goit.study/api-docs/', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // Other middleware and routes
 app.use(express.json());
 app.use('/api/expenses', require('./routes/expenses')); // Example route
