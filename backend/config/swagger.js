@@ -10,7 +10,21 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:3000/', // Update with your server URL
+        url: ' npm install -g nodemon
+
+        added 29 packages in 45s
+        
+        4 packages are looking for funding
+          run `npm fund` for details
+        
+        Jhinks@LAPTOP-O2VUN4IU MINGW64 /c/expense-tracker/expense-tracker (main)
+        $ nodemon start
+        [nodemon] 3.1.4
+        [nodemon] to restart at any time, enter `rs`
+        [nodemon] watching path(s): *.*
+        [nodemon] watching extensions: js,mjs,cjs,json
+        [nodemon] starting `react-scripts start start`
+        ', // Update with your server URL
       },
     ],
   },
