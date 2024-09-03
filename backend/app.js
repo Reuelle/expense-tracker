@@ -1,6 +1,7 @@
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./config/swagger'); // Import the Swagger specification
+const expensesRouter = require('./routes/expenses');
 
 const app = express();
 
