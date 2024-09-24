@@ -1,5 +1,4 @@
 /* src/components/LoginPage/LoginPage.module.css */
-
 .loginPage {
   display: block;
   width: 100%;
@@ -13,9 +12,10 @@
   margin-left: 786px; /* Align with left margin */
   margin-bottom: 0;
 }
-.paheHeader H1 {
-  color= rgba(250, 250, 250, 1);
-  }
+
+.pageHeader h1 {
+  color: rgba(250, 250, 250, 1); /* Corrected color assignment */
+}
 
 .pageDescription {
   width: 419px;
