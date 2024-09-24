@@ -66,7 +66,7 @@ const RegisterPage = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
-        navigation={{ href: '/login', text: 'Already have an account?<span> Sign In</span>' }}
+        navigation={{ href: '/login', text: 'Already have an account? Sign In' }}
       />
       <TransactionForm />
       <AllUsersTab />
