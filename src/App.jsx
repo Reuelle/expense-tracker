@@ -8,7 +8,7 @@ import RegisterPage from './components/RegisterPage/RegisterPage';
 import AuthorizationPage from './components/AuthorizationPage/AuthorizationPage';
 import TransactionHistoryPage from './components/TransactionHistoryPage/TransactionHistoryPage';
 import MainTransactionPage from './components/MainTransactionPage/MainTransactionPage';
-import ExpenseChart from './components/ExpenseChart/ExpenseChart'; // Import your ExpenseChart
+import ExpenseChart from './components/TransactionsChart/ExpenseChart'; // Import your ExpenseChart
 
 const App = () => {
   const [transactions, setTransactions] = useState([]); // State to hold transactions
