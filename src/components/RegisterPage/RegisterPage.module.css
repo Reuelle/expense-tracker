@@ -53,6 +53,7 @@
 
 .registerPage a {
   display: block;
+   margin: 0 auto;
   margin-top: 15px;
   color: rgb(250, 250, 250);
   text-decoration: none;
