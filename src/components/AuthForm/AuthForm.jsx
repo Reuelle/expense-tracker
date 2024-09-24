@@ -1,4 +1,3 @@
-// src/components/AuthForm/AuthForm.jsx
 import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
@@ -32,7 +31,6 @@ const AuthForm = ({
         // Handle successful login
       }
     } catch (error) {
-      // Set form errors if registration fails
       setErrors({ [error.field]: error.message });
       console.error('Form submission error:', error);
     }
@@ -78,9 +76,12 @@ const AuthForm = ({
               {submitButtonText}
             </button>
             <div className={styles.navigation}>
-              <a href={navigation.href} dangerouslySetInnerHTML={{ __html: navigation.text }} className={styles.navLink}>
-                {navigation.text}
-              </a>
+              {/* Use dangerouslySetInnerHTML for HTML string */}
+              <a
+                href={navigation.href}
+                dangerouslySetInnerHTML={{ __html: navigation.text }}
+                className={styles.navLink}
+              />
             </div>
           </Form>
         )}
