@@ -1,7 +1,8 @@
+/* src/components/LoginPage/LoginPage.module.css */
+
 .loginPage {
-  display: flex;
-  flex-direction: column;
-  width: 1440px;
+  display: block;
+  width: 100%;
   height: 709px;
   margin: 0 auto;
   background-color: #0C0D0D;
@@ -9,27 +10,20 @@
 
 .pageHeader {
   width: 419px;
+  margin-left: 786px; /* Align with left margin */
   margin-bottom: 0;
-  margin-left: 786px; /* Adjusted margin to move the header */
 }
 
 .pageDescription {
   width: 419px;
+  margin-left: 786px; /* Align description with header */
   color: #666;
-  margin-left: 786px; /* Adjusted margin to move the description */
 }
 
 .loginForm {
-  width: 100%; 
   max-width: 500px;
-  margin-left: 786px; /* Apply this margin to shift the form */
+  margin-left: 786px; /* Align form with left margin */
   border-radius: 12px;
   padding: 20px;
-  background-color: #FFFFFF; /* Optional: Add background to form */
-}
-
-.loginForm button {
-  width: 100%;
-  max-width: 145px;
-  margin-top: 20px;
+  background-color: #FFFFFF; /* Optional form background */
 }
