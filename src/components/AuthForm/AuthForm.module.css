@@ -1,10 +1,10 @@
 .authFormContainer {
   max-width: 399px;
-  margin-left: 600px; /* Centered horizontally */
   padding: 20px;
 }
 
 .authForm {
+  margin-left: 600px;
   display: flex;
   flex-direction: column;
   width: 100%; /* Ensure full width if needed */
