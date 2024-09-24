@@ -1,4 +1,3 @@
-/* src/components/LoginPage/LoginPage.module.css */
 .loginPage {
   display: flex;
   flex-direction: column;
@@ -10,20 +9,27 @@
 
 .pageHeader {
   width: 419px;
-  margin-bottom: 0; /* Adjust this value to reduce space */
-  margin-left: 786px;
-}
-
-.pageHeader h1 {
-  font-size: 30px;
-  color: #FAFAFA;
+  margin-bottom: 0;
+  margin-left: 786px; /* Adjusted margin to move the header */
 }
 
 .pageDescription {
   width: 419px;
-  color:  #666;
+  color: #666;
+  margin-left: 786px; /* Adjusted margin to move the description */
 }
 
-.pageDescription p {
-  font-size: 16px;
+.loginForm {
+  width: 100%; 
+  max-width: 500px;
+  margin-left: 786px; /* Apply this margin to shift the form */
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #FFFFFF; /* Optional: Add background to form */
+}
+
+.loginForm button {
+  width: 100%;
+  max-width: 145px;
+  margin-top: 20px;
 }
