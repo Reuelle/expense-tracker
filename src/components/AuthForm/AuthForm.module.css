@@ -55,13 +55,17 @@
   margin-top: 15px;
   margin-left: 0; /* Align navigation text with the form */
 }
-
-.navLink {
-  color: rgb(250, 250, 250); /* Blue link */
-  text-decoration: none;
+.navText {
+  color: rgba(250, 250, 250, 0.6); /* 60% opacity for the main text */
 }
 
-.navLink:hover span {
+.navLink {
+  color: rgba(250, 250, 250, 1); 
+  text-decoration: none; 
+  transition: text-decoration 0.2s; 
+}
+
+.navLink:hover {
   text-decoration: underline;
 }
 
