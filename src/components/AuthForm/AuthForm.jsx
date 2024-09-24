@@ -76,12 +76,12 @@ const AuthForm = ({
               {submitButtonText}
             </button>
             <div className={styles.navigation}>
-              {/* Use dangerouslySetInnerHTML for HTML string */}
-              <a
-                href={navigation.href}
-                dangerouslySetInnerHTML={{ __html: navigation.text }}
-                className={styles.navLink}
-              />
+              <span className={styles.navText}>
+                Already have an account?{' '}
+                <a href={navigation.href} className={styles.navLink}>
+                  Sign In
+                </a>
+              </span>
             </div>
           </Form>
         )}
