@@ -59,6 +59,8 @@
   text-decoration: none;
 }
 
-.registerPage a:hover span{
+.navigationLink:hover span {
   text-decoration: underline;
+}
+
 }
