@@ -67,6 +67,7 @@
 
 .navLink:hover {
   text-decoration: underline;
+  color: rgba(250, 250, 250, 1);
 }
 
 .togglePasswordIcon {
