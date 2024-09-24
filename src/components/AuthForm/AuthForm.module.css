@@ -1,7 +1,6 @@
 .authFormContainer {
   max-width: 399px;
-  margin: 0 auto;
-  margin-left: 786px; /* Adjusted margin-left */
+  margin: 0 auto; /* Centered horizontally */
   padding: 20px;
 }
 
@@ -21,14 +20,14 @@
 }
 
 .formField {
-  width: 399px;
+  width: 100%; /* Set to full width */
   height: 48px;
   padding: 10px;
   border: 1px solid rgb(250, 250, 250);
   border-radius: 12px;
-  color: rgb(250, 250, 250); /* Corrected RGB values */
+  color: rgb(250, 250, 250);
   background-color: #0C0D0D; /* Assuming a dark background for contrast */
-  margin-top: 5px; /* Added margin-top */
+  margin-top: 5px;
 }
 
 .invalid {
@@ -62,16 +61,16 @@
   text-decoration: none;
 }
 
-.togglePasswordIcon {
-  cursor: pointer;            /* Show pointer cursor */
-  position: absolute;         /* Position the icon absolutely */
-  left: 380px;                /* Align it to the right inside the field */
-  top: 50%;                   /* Center it vertically */
-  transform: translateY(-50%); /* Adjust for vertical centering */
+.navLink:hover span {
+  text-decoration: underline;
 }
 
-
-.passwordIcon {
-  width: 100%; /* Adjust size of the icon */
-  height: 100%; /* Adjust size of the icon */
+.togglePasswordIcon {
+  cursor: pointer;
+  position: absolute;
+  right: 10px; /* Align it to the right within the input */
+  top: 50%; /* Center it vertically */
+  transform: translateY(-50%);
+  width: 24px; /* Adjust size of the icon */
+  height: 24px; /* Adjust size of the icon */
 }
