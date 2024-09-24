@@ -1,4 +1,3 @@
-// src/components/LoginPage/LoginPage.jsx
 import React from 'react';
 import AuthForm from '../AuthForm/AuthForm'; // Adjust the import path as needed
 import Decoration from '../Decoration/Decoration'; // Import the Decoration component
@@ -22,21 +21,23 @@ const LoginPage = () => {
       <Decoration /> {/* Render the Decoration component */}
       <header className={styles.pageHeader}>
         <h1>Sign In</h1>
-      <div className={styles.pageDescription}>
-        <p>Welcome back to effortless expense tracking! Your financial dashboard awaits.</p>
-      </div>
+        <div className={styles.pageDescription}>
+          <p>Welcome back to effortless expense tracking! Your financial dashboard awaits.</p>
+        </div>
       </header>
-      <AuthForm
-        formFields={[
-          { name: 'email', type: 'email', placeholder: 'Email' },
-          { name: 'password', type: 'password', placeholder: 'Password' },
-        ]}
-        submitButtonText="Sign In"
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-        navigation={{ href: '/register', text: "Don't have an account? Register here" }}
-      />
+      <div className={styles.loginForm}>
+        <AuthForm
+          formFields={[
+            { name: 'email', type: 'email', placeholder: 'Email' },
+            { name: 'password', type: 'password', placeholder: 'Password' },
+          ]}
+          submitButtonText="Sign In"
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+          navigation={{ href: '/register', text: "Don't have an account? Register here" }}
+        />
+      </div>
     </div>
   );
 };
