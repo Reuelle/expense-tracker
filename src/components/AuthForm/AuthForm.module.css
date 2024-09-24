@@ -5,7 +5,6 @@
 }
 
 .authForm {
-  margin-left: 600px;
   display: flex;
   flex-direction: column;
   width: 100%; /* Ensure full width if needed */
