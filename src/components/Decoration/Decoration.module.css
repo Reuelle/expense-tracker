@@ -4,12 +4,13 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 611px;
-  height: 568px;
+  width: 100%; /* Set width to 100% */
+  height: 100%; /* Set height to 100% */
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-   border-radius: 20px; 
-   margin-left: 121px;
-   margin-top: 132px;
+  border-radius: 20px; 
+  margin-left: 121px; /* Adjust as needed */
+  margin-top: 132px; /* Adjust as needed */
+  background-color: rgba(255, 255, 255, 0.5); /* Optional: add a background color with transparency */
 }
