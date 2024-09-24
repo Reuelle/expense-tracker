@@ -59,6 +59,6 @@
   text-decoration: none;
 }
 
-.registerPage a:hover {
+.registerPage a:hover span{
   text-decoration: underline;
 }
