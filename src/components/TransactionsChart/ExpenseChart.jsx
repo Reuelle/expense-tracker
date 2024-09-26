@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useMemo } from 'react';
+// src/components/ExpenseChart/ExpenseChart.jsx
+import React, { useMemo, useState } from 'react';
 import { Doughnut } from 'react-chartjs-2'; // Using Chart.js for rendering the chart
 import styles from './ExpenseChart.module.css';
 
