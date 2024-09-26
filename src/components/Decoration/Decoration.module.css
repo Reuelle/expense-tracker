@@ -1,14 +1,28 @@
+/* src/components/DecorationComponent/DecorationComponent.module.css */
+
+.container {
+  position: relative; /* Ensures relative positioning for absolute child elements */
+  width: 100%;
+  height: 100vh; /* Fill the viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .backgroundImage {
-  position: fixed; /* Ensures the background image stays in place */
-  top: 0;
-  left: 0;
-  width: 100%; /* Fill the entire width */
-  height: 100%; /* Fill the entire height */
-  background-image: url('path-to-your-image.jpg'); /* Specify the image URL */
+  position: absolute; /* Keeps it in the background */
+  top: 132px; /* Margin from the top */
+  left: 121px; /* Margin from the left */
+  width: calc(100% - 121px); /* Adjust width based on the margin */
+  height: calc(100% - 132px); /* Adjust height based on the margin */
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  background-position: center; /* Center the background image */
-  z-index: 1; /* Ensure it's behind the form */
-  border-radius: 20px; /* Add rounding if necessary */
-  background-color: rgba(255, 255, 255, 0.5); /* Optional: semi-transparent background color */
+  z-index: 1; /* Ensures it stays behind other content */
+}
+
+.decorationTab {
+  position: relative;
+  z-index: 10; /* This will sit above the background */
+  /* Additional styles for decoration */
 }
