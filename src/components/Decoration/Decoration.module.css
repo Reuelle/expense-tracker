@@ -1,7 +1,7 @@
 /* src/components/DecorationComponent/DecorationComponent.module.css */
 
 .container {
-  position: relative; /* Ensures relative positioning for absolute child elements */
+  position: relative; /* Ensure relative positioning for absolute child elements */
   width: 100%;
   height: 100vh; /* Fill the viewport height */
   display: flex;
@@ -13,16 +13,17 @@
   position: absolute; /* Keeps it in the background */
   top: 132px; /* Margin from the top */
   left: 121px; /* Margin from the left */
-  width: calc(100% - 121px); /* Adjust width based on the margin */
-  height: calc(100% - 132px); /* Adjust height based on the margin */
+  width: 611px; /* Fixed width */
+  height: 568px; /* Fixed height */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1; /* Ensures it stays behind other content */
+  border-radius: 20px; /* Optional: Apply rounded corners */
 }
 
 .decorationTab {
   position: relative;
   z-index: 10; /* This will sit above the background */
-  /* Additional styles for decoration */
+  /* Additional styles for decoration tab */
 }
