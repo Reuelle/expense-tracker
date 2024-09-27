@@ -1,6 +1,6 @@
 /* src/components/LoginPage/LoginPage.module.css */
 .loginPage {
-  display: block;
+  display: flex;
   width: 100%;
   height: 709px;
   margin: 0 auto;
