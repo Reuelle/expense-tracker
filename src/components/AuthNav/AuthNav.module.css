@@ -2,8 +2,8 @@
 
 .homePage {
   position: absolute; /* Use absolute positioning */
-  top: 50px; /* 50px from the top of the parent container */
-  left: 0; /* Align to the left of the parent */
+  top: 95px; /* 50px from the top of the parent container */
+  left: 70px; /* Align to the left of the parent */
   width: 575px; 
   height: 320px;
   /* Additional styles can go here */
