@@ -4,6 +4,7 @@
   margin-left: 765px;
   margin-top: 132px;
    position: relative;
+  background-image: gray;
 }
 .authNav {
   display: flex;
