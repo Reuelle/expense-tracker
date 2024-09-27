@@ -1,11 +1,11 @@
 /* src/components/RegisterPage/RegisterPage.module.css */
 .registerPage {
+  display: flex;
   flex-direction: column;
   width: 1440px;
   height: 709px;
   margin: 0 auto;
   background-color: #0C0D0D;
-  display: flex;
 }
 .header {
   width: 600px; /* Adjust max-width */
