@@ -22,11 +22,11 @@
 
 .header {
   padding: 20px;
-  background-color:gray;
+  max-width: 1000px;
   width: 562px;
   height: 351px;
   margin-left: 400px; /* Adjust the horizontal position */
-  margin-top: 2px; /* Adjust the vertical position */
+  margin-top: 32px; /* Adjust the vertical position */
 }
 
 .header h4 {
