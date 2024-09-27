@@ -1,64 +1,19 @@
-/* src/components/RegisterPage/RegisterPage.module.css */
-.registerPage {
+.header {
+  width: 533px;
+  height: 123px;
+  margin-left: 786px;
+  margin-top: 150px;
   display: flex;
   flex-direction: column;
-  width: 1440px;
-  height: 709px;
-  margin: 0 auto;
-  background-color: #0C0D0D;
-}
-.header {
-  width: 600px; /* Adjust max-width */
-  margin-top: 25px; /* Top margin for spacing */
-  margin-left: 821px; 
+  gap: 20px; /* Space between the heading and description */
 }
 
 .header h1 {
   font-size: 32px;
   color: #FAFAFA;
-  margin-bottom: 10px;
 }
 
 .description {
   font-size: 16px;
-  color: #666;
-  margin-top: 10px; /* Margin for spacing */
-}
-
-.registerPage form {
-  width: 100%;
-  max-width: 500px; /* Adjust based on design needs */
-  border-radius: 12px;
-  padding: 20px; /* Add padding inside the form */
-}
-
-.registerPage button {
-  width: 100%;
-  max-width: 145px; /* Adjust button width */
-  height: 47px;
-  padding: 10px;
-  font-size: 16px;
-  background-color: #0EF387;
-  color: #0C0D0D;
-  border: none;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px; /* Add margin for spacing */
-}
-
-.registerPage button:hover {
-  background-color: #218838;
-}
-
-.registerPage a {
-  display: block;
-  margin: 0 auto;
-  margin-top: 15px;
-  color: rgb(250, 250, 250);
-  text-decoration: none;
-}
-
-.navigationLink:hover span {
-  text-decoration: underline;
+  color: #666; /* Consider using a lighter color for contrast if needed */
 }
