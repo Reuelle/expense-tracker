@@ -1,9 +1,8 @@
 .homePage {
   width: 575px; 
   height: 320px;
-  margin-left: 265px;
-  margin-top: 32px;
-   position: relative;
+  margin-left: 295px;
+  position: relative;
 }
 .authNav {
   display: flex;
