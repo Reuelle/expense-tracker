@@ -2,15 +2,20 @@
 .registerPage {
   display: flex;
   flex-direction: column;
-  width: 1440px;
-  height: 709px;
+  align-items: center; /* Center align items */
+  width: 100%; /* Full width */
+  max-width: 1440px; /* Limit maximum width */
+  height: auto; /* Allow height to adjust based on content */
   margin: 0 auto;
   background-color: #0C0D0D;
+  padding: 20px; /* Add padding for better spacing */
 }
+
 .header {
-  width: 600px; /* Adjust max-width */
+  width: 100%; /* Full width */
+  max-width: 600px; /* Adjust max-width */
   margin-top: 25px; /* Top margin for spacing */
-  margin-left: 821px; 
+  text-align: center; /* Center text */
 }
 
 .header h1 {
@@ -60,6 +65,25 @@
   text-decoration: none;
 }
 
-.navigationLink:hover span {
-  text-decoration: underline;
+.registerPage a:hover {
+  text-decoration: underline; /* Add hover effect */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 28px; /* Adjust font size */
+  }
+
+  .description {
+    font-size: 14px; /* Adjust font size */
+  }
+
+  .registerPage button {
+    max-width: 150px; /* Adjust button width on smaller screens */
+  }
+
+  .registerPage {
+    padding: 10px; /* Less padding on smaller screens */
+  }
 }
