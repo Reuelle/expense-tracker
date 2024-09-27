@@ -1,7 +1,5 @@
-/* src/components/LoginPage/LoginPage.module.css */
-.loginPage {
-  display: flex;
-  width: 100%;
+  align-items: center; /* Center elements horizontally */
+  width: 1440px;
   height: 709px;
   margin: 0 auto;
   background-color: #0C0D0D;
@@ -9,23 +7,20 @@
 
 .pageHeader {
   width: 419px;
-  margin-left: 786px; /* Align with left margin */
-  margin-bottom: 0;
+  margin-bottom: 0; /* Adjust this value to reduce space */
+  margin-left: 600px;
 }
 
 .pageHeader h1 {
-  color: rgba(250, 250, 250, 1); /* Corrected color assignment */
+  font-size: 30px;
+  color: #FAFAFA;
 }
 
 .pageDescription {
   width: 419px;
-  color: #666;
+  color:  #666;
 }
 
-.loginForm {
-  max-width: 500px;
-  margin-left: 786px; /* Align form with left margin */
-  border-radius: 12px;
-  padding: 20px;
-  background-color: #0C0D0D; /* Optional form background */
+.pageDescription p {
+  font-size: 16px;
 }
