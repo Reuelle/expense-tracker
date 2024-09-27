@@ -4,8 +4,6 @@
   height: 100vh; /* Fill the viewport height */
   display: flex;
   justify-content: flex-start; /* Align container to the left */
-  align-items: center; /* Vertically center content */
-  padding-left: 50px; /* Optional: Add padding to move content slightly away from the edge */
 }
 
 .balanceCardImage {
@@ -15,7 +13,7 @@
 
 .backgroundImage {
   position: absolute; /* Keeps it in the background */
-  top: 70px; /* Margin from the top */
+  top: 60px; /* Margin from the top */
   left: 100px; /* Margin from the left */
   width: 611px; /* Fixed width */
   height: 568px; /* Fixed height */
