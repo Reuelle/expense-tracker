@@ -3,6 +3,7 @@
   height: 320px;
   margin-left: 765px;
   margin-top: 132px;
+   position: relative;
 }
 .authNav {
   display: flex;
