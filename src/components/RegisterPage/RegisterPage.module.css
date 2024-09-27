@@ -14,7 +14,8 @@
 .header {
   width: 100%; /* Full width */
   max-width: 600px; /* Adjust max-width */
-  margin-top: 25px; /* Top margin for spacing */
+  margin-top: 150px; /* Top margin for spacing */
+  margin-left: 786px;
   text-align: center; /* Center text */
 }
 
