@@ -1,6 +1,5 @@
 /* src/components/RegisterPage/RegisterPage.module.css */
 .registerPage {
-  display: flex;
   flex-direction: column;
   width: 1440px;
   height: 709px;
