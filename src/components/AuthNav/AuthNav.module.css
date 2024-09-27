@@ -1,9 +1,14 @@
+/* src/components/AuthNav/AuthNav.module.css */
+
 .homePage {
+  position: absolute; /* Use absolute positioning */
+  top: 50px; /* 50px from the top of the parent container */
+  left: 0; /* Align to the left of the parent */
   width: 575px; 
   height: 320px;
-  margin-left: 295px;
-  position: relative;
+  /* Additional styles can go here */
 }
+
 .authNav {
   display: flex;
   margin-top: 26px;
