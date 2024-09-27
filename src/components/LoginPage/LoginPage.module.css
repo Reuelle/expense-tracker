@@ -1,17 +1,18 @@
 /* src/components/LoginPage/LoginPage.module.css */
 .loginPage {
-  display: flex;
+   display: flex;
   flex-direction: column;
-  align-items: center; /* Center elements horizontally */
-  width: 1440px;
+   width: 1440px;
   height: 709px;
-  background-color: #0C0D0D;
+   margin: 0 auto;
+   background-color: #0C0D0D;
 }
 
 .pageHeader {
   width: 419px;
   margin-bottom: 0; /* Adjust this value to reduce space */
   margin-left: 600px;
+  Position: absolute;
 }
 
 .pageHeader h1 {
