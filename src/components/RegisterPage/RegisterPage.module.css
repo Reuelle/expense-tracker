@@ -8,9 +8,13 @@
   background-color: #0C0D0D;
 }
 .header {
-  width: 600px; /* Adjust max-width */
-  margin-top: 25px; /* Top margin for spacing */
-  margin-left: 821px; 
+width: 533px;
+  height: 123px;
+  margin-left: 786px;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between the heading and description */
 }
 
 .header h1 {
