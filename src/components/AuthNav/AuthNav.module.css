@@ -1,3 +1,9 @@
+.homePage {
+  width: 575px; 
+  height: 320px;
+  margin-left: 765px;
+  margin-top: 132px;
+}
 .authNav {
   display: flex;
   margin-top: 26px;
