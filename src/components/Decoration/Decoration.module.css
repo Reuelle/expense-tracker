@@ -21,6 +21,15 @@
   border-radius: 20px; /* Optional: Apply rounded corners */
 }
 
+.balanceCard {
+  position: absolute;
+  top: 447px; /* Adjust to desired position */
+  left: 50px; /* Adjust to desired position */
+  z-index: 5; /* Ensure it stays above the background image */
+  width: 303px; /* Fixed width */
+  height: 121px;
+}
+
 .decorationTab {
   position: relative;
   z-index: 10; /* This will sit above the background */
