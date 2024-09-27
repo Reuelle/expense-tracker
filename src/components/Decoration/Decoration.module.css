@@ -1,25 +1,27 @@
 /* src/components/DecorationComponent/DecorationComponent.module.css */
 
 .container {
-  position: relative; /* Ensure relative positioning for absolute child elements */
-  width: 100%;
-  height: 100vh; /* Fill the viewport height */
+  position: relative;
+  width: 100%; 
+  height: 100vh; /* Full viewport height */
   display: flex;
-  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Ensure content doesn't overflow */
 }
 
 .backgroundImage {
-  position: absolute; /* Keeps it in the background */
-  top: 70px; /* Margin from the top */
-  left: 100px; /* Margin from the left */
-  width: 611px; /* Fixed width */
-  height: 568px; /* Fixed height */
-  background-size: cover;
+  position: absolute;
+  top: 132px; /* Adjust as needed */
+  left: 100px; /* Adjust as needed */
+  width: 611px;
+  height: 568px;
+  background-size: cover; /* or 'contain', depending on your preference */
+  background-position: center;
   background-repeat: no-repeat;
-  z-index: 1; /* Ensures it stays behind other content */
-  border-radius: 20px; /* Optional: Apply rounded corners */
+  z-index: 1;
+  border-radius: 20px;
 }
-
 .decorationTab {
   position: relative;
   z-index: 10; /* This will sit above the background */
