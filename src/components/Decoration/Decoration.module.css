@@ -11,7 +11,7 @@
 
 .backgroundImage {
   position: absolute; /* Keeps it in the background */
-  top: 90px; /* Margin from the top */
+  top: 70px; /* Margin from the top */
   left: 100px; /* Margin from the left */
   width: 611px; /* Fixed width */
   height: 568px; /* Fixed height */
