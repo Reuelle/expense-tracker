@@ -1,3 +1,7 @@
+/* src/components/LoginPage/LoginPage.module.css */
+.loginPage {
+  display: flex;
+  flex-direction: column;
   align-items: center; /* Center elements horizontally */
   width: 1440px;
   height: 709px;
