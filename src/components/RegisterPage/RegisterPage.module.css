@@ -33,6 +33,7 @@ width: 533px;
   max-width: 500px; /* Adjust based on design needs */
   border-radius: 12px;
   padding: 20px; /* Add padding inside the form */
+   margin-top: 190px;
 }
 
 .registerPage button {
