@@ -18,7 +18,6 @@
   background-repeat: no-repeat;
   z-index: 1; /* Ensures it stays behind other content */
   border-radius: 20px; /* Optional: Apply rounded corners */
-  background-position: center;
 }
 
 .decorationTab {
