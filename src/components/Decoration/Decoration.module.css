@@ -1,5 +1,5 @@
 .container {
-  position: relative; /* Relative for absolute child elements */
+  position: absolute; /* Relative for absolute child elements */
   width: 100%;
   height: 100vh; /* Fill the viewport height */
   display: flex;

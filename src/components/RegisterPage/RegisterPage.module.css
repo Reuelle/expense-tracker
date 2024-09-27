@@ -4,13 +4,12 @@
   flex-direction: column;
   width: 1440px;
   height: 709px;
-   margin: 0 auto;
   background-color: #0C0D0D;
 }
 .header {
 width: 533px;
   height: 123px;
-  margin-left: 786px;
+  margin-left: 796px;
   margin-top: 60px;
   Position: absolute;
   gap: 20px; /* Space between the heading and description */
@@ -33,7 +32,7 @@ width: 533px;
   max-width: 500px; /* Adjust based on design needs */
   border-radius: 12px;
   padding: 20px; /* Add padding inside the form */
-   margin-top: 190px;
+   margin-top: 170px;
 }
 
 .registerPage button {
