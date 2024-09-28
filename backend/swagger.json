@@ -1,0 +1,1628 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "version": "1.0.0",
+    "title": "WaterTraker API docs",
+    "description": "API documentation for GoIT project 'Expense Tracker'. [Backend github repository](https://github.com/z9877969/expense_tracker_backend)",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://expense-tracker.b.goit.study/api/"
+    },
+    {
+      "url": "http://localhost:4040/api/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Auth",
+      "description": "Authorization endpoints"
+    },
+    {
+      "name": "User",
+      "description": "User endpoints"
+    },
+    {
+      "name": "Category",
+      "description": "Transactions category endpoints"
+    },
+    {
+      "name": "Transactions",
+      "description": "Transactions endpoints"
+    }
+  ],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "User registration",
+        "parameters": [],
+        "requestBody": {
+          "description": "Registration's object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successfull operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistrationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request (invalid request body)",
+            "content": {}
+          },
+          "409": {
+            "description": "Provided email already exists",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "User login",
+        "parameters": [],
+        "requestBody": {
+          "description": "Login object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfull operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request (invalid request body)",
+            "content": {}
+          },
+          "403": {
+            "description": "Email doesn't exist / Password is wrong",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/auth/logout": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "User logout",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfull operation",
+            "content": {}
+          },
+          "400": {
+            "description": "No token provided",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized (invalid access token)",
+            "content": {}
+          },
+          "404": {
+            "description": "Invalid user / Invalid session",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/auth/refresh": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Gets new pair of tokens (use Bearer {refreshToken} instead of accessToken)",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "description": "SID object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokensRequest"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfull operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RefreshTokensResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "No token provided / Bad request (invalid request body)",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized (invalid refresh token)",
+            "content": {}
+          },
+          "404": {
+            "description": "Invalid user / Invalid session",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/users/current": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Gets about user info",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfull operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUserInfoResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "No token provided",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized (invalid access token)",
+            "content": {}
+          },
+          "404": {
+            "description": "Invalid user / Invalid session",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/users/info": {
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Updates about user info",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "requestBody": {
+          "description": "User`s data to update. At least one field is required.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfull operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateUserResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request (invalid request body)",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized (invalid access token)",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Invalid user / Invalid session",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/users/avatar": {
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Updates user`s avatar",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "requestBody": {
+          "description": "New user`s avatar file",
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAvatarRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfull operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateAvatarResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "No token provided / Bad request (invalid request body)",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized (invalid access token)",
+            "content": {}
+          },
+          "404": {
+            "description": "Invalid user / Invalid session",
+            "content": {}
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Remove user`s avatar",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "avatarId",
+            "description": "User`s avatar id. (value into end of baseUrl before '.webp')",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfull operation",
+            "content": {}
+          },
+          "400": {
+            "description": "No token provided",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized (invalid access token)",
+            "content": {}
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {}
+          },
+          "404": {
+            "description": "Invalid user / Invalid session / Image not found",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/categories": {
+      "post": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Creates user`s transactions category",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "requestBody": {
+          "description": "User`s transactions category object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCategoryRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successfull operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateCategoryResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "No token provided / Bad request (invalid request body) / Category already exists",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized (invalid access token)",
+            "content": {}
+          },
+          "404": {
+            "description": "Invalid user / Invalid session",
+            "content": {}
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Get user`s transactions categories",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfull operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetCategoriesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "No token provided / Bad request (invalid request body) / Category already exists",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized (invalid access token)",
+            "content": {}
+          },
+          "404": {
+            "description": "Invalid user / Invalid session",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/categories/{id}": {
+      "patch": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Update user`s transactions category",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "requestBody": {
+          "description": "Transaction category id. ('_id' field in category object)",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCategoryRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfull operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateCategoryResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "No token provided / Bad request (invalid request body)",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized (invalid access token)",
+            "content": {}
+          },
+          "403": {
+            "description": "No access to data",
+            "content": {}
+          },
+          "404": {
+            "description": "Invalid user / Invalid session / Category not found",
+            "content": {}
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Remove user`s transaction category",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfull operation",
+            "content": {}
+          },
+          "400": {
+            "description": "No token provided",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized (invalid access token)",
+            "content": {}
+          },
+          "403": {
+            "description": "No access to data",
+            "content": {}
+          },
+          "404": {
+            "description": "Invalid user / Invalid session / Category not found",
+            "content": {}
+          },
+          "409": {
+            "description": "Can`t remove! Some transactions depend on this category",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/transactions": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Creates user`s transaction",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "requestBody": {
+          "description": "User`s transaction object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTransactionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successfull operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateTransactionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "No token provided / Bad request (invalid request body, category or it type is wrong)",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized (invalid access token)",
+            "content": {}
+          },
+          "403": {
+            "description": "No access to category",
+            "content": {}
+          },
+          "404": {
+            "description": "Invalid user / Invalid session",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/transactions/{type}": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Get user`s transactions by transaction type and date",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true
+          },
+          {
+            "in": "params",
+            "description": "Transactions type",
+            "name": "type",
+            "schema": {
+              "enum": [
+                "incomes",
+                "expenses"
+              ]
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "description": "Transactions of chosed date or all transactions if without date",
+            "name": "date",
+            "schema": {
+              "example": "2023-10-15"
+            }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfull operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTransactionsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "No token provided / Invalid request, type must be one of [incomes, expenses]",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized (invalid access token)",
+            "content": {}
+          },
+          "404": {
+            "description": "Invalid user / Invalid session",
+            "content": {}
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Remove user`s transaction by ID",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true
+          },
+          {
+            "in": "params",
+            "description": "Transactions ID",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfull operation",
+            "content": {}
+          },
+          "400": {
+            "description": "No token provided",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized (invalid access token)",
+            "content": {}
+          },
+          "403": {
+            "description": "No access to transaction",
+            "content": {}
+          },
+          "404": {
+            "description": "Invalid user / Invalid session / Transaction not found",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/transactions/{type}/{id}": {
+      "patch": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Update user`s transactions by transaction",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true
+          },
+          {
+            "in": "params",
+            "description": "Transactions type",
+            "name": "type",
+            "schema": {
+              "enum": [
+                "incomes",
+                "expenses"
+              ]
+            },
+            "required": true
+          },
+          {
+            "in": "params",
+            "description": "Updating transaction ID",
+            "name": "id",
+            "schema": {
+              "example": "6529f0a3cdeb9c878cbc5259"
+            }
+          }
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "requestBody": {
+          "description": "User`s transaction object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTransactionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfull operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateTransactionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "No token provided / Invalid request, type must be one of [incomes, expenses] / Bad request (invalid request body)",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized (invalid access token)",
+            "content": {}
+          },
+          "403": {
+            "description": "No access to transaction",
+            "content": {}
+          },
+          "404": {
+            "description": "Invalid user / Invalid session / Invalid request, transaction not found",
+            "content": {}
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "RegistrationRequest": {
+        "required": [
+          "name",
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "User's name",
+            "example": "Bob",
+            "minLength": 2,
+            "maxLength": 32
+          },
+          "email": {
+            "type": "string",
+            "description": "User's email",
+            "format": "email",
+            "maxLength": 64
+          },
+          "password": {
+            "type": "string",
+            "description": "User's password",
+            "example": "qwer1234",
+            "minLength": 8,
+            "maxLength": 64
+          }
+        }
+      },
+      "RegistrationResponse": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "User's name",
+            "example": "Bob"
+          },
+          "email": {
+            "type": "string",
+            "description": "User's email",
+            "format": "email"
+          },
+          "_id": {
+            "type": "string",
+            "description": "User`s id",
+            "example": "507f1f77bcf86cd799439011"
+          }
+        }
+      },
+      "LoginRequest": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "User's email",
+            "format": "email",
+            "maxLength": 64
+          },
+          "password": {
+            "type": "string",
+            "description": "User's password",
+            "example": "qwer1234",
+            "minLength": 8,
+            "maxLength": 64
+          }
+        }
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "object",
+            "properties": {
+              "_id": {
+                "type": "string",
+                "description": "User`s id",
+                "example": "507f1f77bcf86cd799439011"
+              },
+              "email": {
+                "type": "string",
+                "description": "User's email",
+                "format": "email",
+                "maxLength": 64
+              },
+              "name": {
+                "type": "string",
+                "description": "User`s name",
+                "minLength": 2,
+                "maxLength": 32,
+                "example": "Bob"
+              },
+              "avatarUrl": {
+                "type": "string",
+                "description": "User`s avatar url",
+                "example": "https://some.url.com/path/to/avatar.jpg or null"
+              },
+              "currency": {
+                "type": "string",
+                "description": "User`s transactions currency",
+                "enum": [
+                  "usd",
+                  "eur",
+                  "uah"
+                ],
+                "example": "usd"
+              },
+              "categories": {
+                "$ref": "#/components/examples/CategoriesListSchema"
+              },
+              "transactionsTotal": {
+                "$ref": "#/components/examples/transactionsTotal"
+              }
+            }
+          },
+          "accessToken": {
+            "type": "string",
+            "description": "Session`s access token (needed for all requests)",
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmMyMDg1YmQwOTM2NTI4MTA3Y2UyNzQiLCJzaWQiOiI1ZmMyZDJmY2UxZDIwNTA2NzAyYmRkMjIiLCJpYXQiOjE2MDY2MDM1MTYsImV4cCI6MTYwNjYwNzExNn0.rJ_QjU4KvA76H96RHsvOBChK0Vjbd0NmqjMxdQVJIXA"
+          },
+          "refreshToken": {
+            "type": "string",
+            "description": "Session's refresh token (needed for /auth/refresh)",
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmMyMDg1YmQwOTM2NTI4MTA3Y2UyNzQiLCJzaWQiOiI1ZmMyZDJmY2UxZDIwNTA2NzAyYmRkMjIiLCJpYXQiOjE2MDY2MDM1MTYsImV4cCI6MTYwNjYwNzExNn0.rJ_QjU4KvA76H96RHsvOBChK0Vjbd0NmqjMxdQVJIXB"
+          },
+          "sid": {
+            "type": "string",
+            "description": "Session`s id",
+            "example": "507f1f77bcf86cd799439011"
+          }
+        }
+      },
+      "RefreshTokensRequest": {
+        "required": [
+          "sid"
+        ],
+        "type": "object",
+        "properties": {
+          "sid": {
+            "type": "string",
+            "description": "Session`s id",
+            "example": "507f1f77bcf86cd799439011"
+          }
+        }
+      },
+      "RefreshTokensResponse": {
+        "type": "object",
+        "properties": {
+          "accessToken": {
+            "type": "string",
+            "description": "New session`s access token (needed for all requests)",
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmMyMDg1YmQwOTM2NTI4MTA3Y2UyNzQiLCJzaWQiOiI1ZmMyZDJmY2UxZDIwNTA2NzAyYmRkMjIiLCJpYXQiOjE2MDY2MDM1MTYsImV4cCI6MTYwNjYwNzExNn0.rJ_QjU4KvA76H96RHsvOBChK0Vjbd0NmqjMxdQVJIXA"
+          },
+          "refreshToken": {
+            "type": "string",
+            "description": "New session's refresh token (needed for /auth/refresh)",
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmMyMDg1YmQwOTM2NTI4MTA3Y2UyNzQiLCJzaWQiOiI1ZmMyZDJmY2UxZDIwNTA2NzAyYmRkMjIiLCJpYXQiOjE2MDY2MDM1MTYsImV4cCI6MTYwNjYwNzExNn0.rJ_QjU4KvA76H96RHsvOBChK0Vjbd0NmqjMxdQVJIXB"
+          },
+          "sid": {
+            "type": "string",
+            "description": "New session`s id",
+            "example": "507f1f77bcf86cd799439011"
+          }
+        }
+      },
+      "GetUserInfoResponse": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "User`s id",
+            "example": "507f1f77bcf86cd799439011"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "description": "User`s name",
+            "maxLength": 32,
+            "example": "Bob or null"
+          },
+          "email": {
+            "type": "string",
+            "description": "User's email",
+            "format": "email"
+          },
+          "avatarUrl": {
+            "type": "string",
+            "description": "User`s avatar url",
+            "example": "https://some.url.com/path/to/avatar.jpg or null"
+          },
+          "currency": {
+            "type": "string",
+            "description": "User's transactions currency",
+            "enum": [
+              "usd",
+              "eur",
+              "uah"
+            ]
+          },
+          "categories": {
+            "$ref": "#/components/examples/CategoriesListSchema"
+          },
+          "transactionsTotal": {
+            "$ref": "#/components/examples/transactionsTotal"
+          }
+        }
+      },
+      "UpdateUserRequest": {
+        "required": [],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "User`s name",
+            "maxLength": 32,
+            "example": "Bob"
+          },
+          "currency": {
+            "type": "string",
+            "description": "User's transactions currency",
+            "enum": [
+              "usd",
+              "eur",
+              "uah"
+            ]
+          }
+        }
+      },
+      "UpdateUserResponse": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "User`s id",
+            "example": "507f1f77bcf86cd799439011"
+          },
+          "name": {
+            "type": "string",
+            "description": "User`s name",
+            "maxLength": 32,
+            "example": "Bob"
+          },
+          "currency": {
+            "type": "string",
+            "description": "User's transactions currency",
+            "enum": [
+              "usd",
+              "eur",
+              "uah"
+            ]
+          }
+        }
+      },
+      "UpdateAvatarRequest": {
+        "required": [
+          "avatar"
+        ],
+        "type": "object",
+        "properties": {
+          "avatar": {
+            "type": "string",
+            "format": "binary",
+            "description": "User's avatar image"
+          }
+        }
+      },
+      "UpdateAvatarResponse": {
+        "type": "object",
+        "properties": {
+          "avatarUrl": {
+            "description": "User`s avatar url",
+            "type": "string"
+          }
+        }
+      },
+      "CreateCategoryRequest": {
+        "required": [
+          "type",
+          "categoryName"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Transaction type",
+            "enum": [
+              "incomes",
+              "expenses"
+            ],
+            "example": "incomes"
+          },
+          "categoryName": {
+            "type": "string",
+            "description": "Category name",
+            "minLength": 2,
+            "maxLength": 16,
+            "example": "Salary"
+          }
+        }
+      },
+      "CreateCategoryResponse": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "Category id",
+            "example": "6522bf1f9027bb7d55d6512b"
+          },
+          "type": {
+            "type": "string",
+            "description": "Transaction type",
+            "enum": [
+              "incomes",
+              "expenses"
+            ],
+            "example": "incomes"
+          },
+          "categoryName": {
+            "type": "string",
+            "description": "Category name",
+            "minLength": 2,
+            "maxLength": 16,
+            "example": "Salary"
+          }
+        }
+      },
+      "GetCategoriesResponse": {
+        "$ref": "#/components/examples/CategoriesListSchema"
+      },
+      "UpdateCategoryRequest": {
+        "required": [
+          "categoryName"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "Category id",
+            "example": "6522bf1f9027bb7d55d6512b"
+          },
+          "categoryName": {
+            "type": "string",
+            "description": "Category name",
+            "minLength": 2,
+            "maxLength": 16,
+            "example": "Salary"
+          }
+        }
+      },
+      "UpdateCategoryResponse": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "Category id",
+            "example": "6522bf1f9027bb7d55d6512b"
+          },
+          "categoryName": {
+            "type": "string",
+            "description": "Category name",
+            "minLength": 2,
+            "maxLength": 16,
+            "example": "Salary"
+          }
+        }
+      },
+      "CreateTransactionRequest": {
+        "required": [
+          "type",
+          "date",
+          "time",
+          "category",
+          "sum"
+        ],
+        "$ref": "#/components/examples/TransactionRequestSchema"
+      },
+      "CreateTransactionResponse": {
+        "type": "object",
+        "$ref": "#/components/examples/TransactionResponseSchema"
+      },
+      "GetTransactionsResponse": {
+        "description": "User`s transactions list",
+        "oneOf": [
+          {
+            "$ref": "#/components/examples/IncomesTransactionsListSchema"
+          },
+          {
+            "$ref": "#/components/examples/ExpensesTransactionsListSchema"
+          }
+        ]
+      },
+      "UpdateTransactionRequest": {
+        "description": "Transaction data object to update",
+        "type": "object",
+        "properties": {
+          "date": {
+            "$ref": "#/components/examples/transaction/date"
+          },
+          "time": {
+            "$ref": "#/components/examples/transaction/time"
+          },
+          "category": {
+            "$ref": "#/components/examples/category/id"
+          },
+          "sum": {
+            "$ref": "#/components/examples/transaction/sum"
+          },
+          "comment": {
+            "$ref": "#/components/examples/transaction/comment"
+          }
+        }
+      },
+      "UpdateTransactionResponse": {
+        "description": "Updated transaction data",
+        "type": "object",
+        "properties": {
+          "date": {
+            "$ref": "#/components/examples/transaction/date"
+          },
+          "time": {
+            "$ref": "#/components/examples/transaction/time"
+          },
+          "category": {
+            "$ref": "#/components/examples/CategoryResponseItem"
+          },
+          "sum": {
+            "$ref": "#/components/examples/transaction/sum"
+          },
+          "comment": {
+            "$ref": "#/components/examples/transaction/comment"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "examples": {
+      "CategoryResponseItem": {
+        "description": "User`s category",
+        "type": "object",
+        "properties": {
+          "_id": {
+            "$ref": "#/components/examples/category/id"
+          },
+          "categoryName": {
+            "oneOf": [
+              {
+                "$ref": "#/components/examples/category/incomesName"
+              },
+              {
+                "$ref": "#/components/examples/category/expensesName"
+              }
+            ]
+          }
+        }
+      },
+      "CategoriesListSchema": {
+        "type": "object",
+        "properties": {
+          "incomes": {
+            "type": "array",
+            "description": "User`s incomes categories list",
+            "items": {
+              "type": "object",
+              "description": "User`s incomes category",
+              "properties": {
+                "_id": {
+                  "$ref": "#/components/examples/category/id"
+                },
+                "categoryName": {
+                  "$ref": "#/components/examples/category/incomesName"
+                },
+                "type": {
+                  "description": "Transaction type",
+                  "type": "string",
+                  "example": "incomes"
+                }
+              }
+            }
+          },
+          "expenses": {
+            "type": "array",
+            "description": "User`s expenses categories list",
+            "items": {
+              "type": "object",
+              "description": "User`s expenses category",
+              "properties": {
+                "_id": {
+                  "description": "User`s transaction category id",
+                  "type": "string",
+                  "example": "6522bf1f9027bb7d55c1973a"
+                },
+                "categoryName": {
+                  "description": "User`s transaction category name",
+                  "type": "string",
+                  "example": "Car"
+                },
+                "type": {
+                  "description": "Transaction type",
+                  "type": "string",
+                  "example": "expenses"
+                }
+              }
+            }
+          }
+        }
+      },
+      "TransactionRequestSchema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/examples/transaction/incomesType"
+          },
+          "date": {
+            "$ref": "#/components/examples/transaction/date"
+          },
+          "time": {
+            "$ref": "#/components/examples/transaction/time"
+          },
+          "category": {
+            "$ref": "#/components/examples/category/id"
+          },
+          "sum": {
+            "$ref": "#/components/examples/transaction/sum"
+          },
+          "comment": {
+            "$ref": "#/components/examples/transaction/comment"
+          }
+        }
+      },
+      "TransactionResponseSchema": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "$ref": "#/components/examples/transaction/id"
+          },
+          "type": {
+            "$ref": "#/components/examples/transaction/incomesType"
+          },
+          "date": {
+            "$ref": "#/components/examples/transaction/date"
+          },
+          "time": {
+            "$ref": "#/components/examples/transaction/time"
+          },
+          "category": {
+            "$ref": "#/components/examples/category/id"
+          },
+          "sum": {
+            "$ref": "#/components/examples/transaction/sum"
+          },
+          "comment": {
+            "$ref": "#/components/examples/transaction/comment"
+          }
+        }
+      },
+      "IncomesTransactionItemSchema": {
+        "description": "User's income transaction object",
+        "type": "object",
+        "properties": {
+          "_id": {
+            "$ref": "#/components/examples/transaction/id"
+          },
+          "type": {
+            "$ref": "#/components/examples/transaction/incomesType"
+          },
+          "date": {
+            "$ref": "#/components/examples/transaction/date"
+          },
+          "time": {
+            "$ref": "#/components/examples/transaction/time"
+          },
+          "category": {
+            "description": "User`s transaction category",
+            "type": "object",
+            "properties": {
+              "_id": {
+                "description": "User`s transaction category id",
+                "type": "string",
+                "example": "6522bf1f9027bb7d55d6512b"
+              },
+              "categoryName": {
+                "description": "User`s transaction category name",
+                "type": "string",
+                "example": "Salary"
+              }
+            }
+          },
+          "sum": {
+            "description": "User`s transaction sum",
+            "type": "integer",
+            "min": 1,
+            "max": 1000000,
+            "example": 700
+          },
+          "comment": {
+            "description": "User`s transaction comment",
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 48,
+            "example": "December salary"
+          }
+        }
+      },
+      "ExpensesTransactionItemSchema": {
+        "description": "User's expense transaction object",
+        "type": "object",
+        "properties": {
+          "_id": {
+            "$ref": "#/components/examples/transaction/id"
+          },
+          "type": {
+            "$ref": "#/components/examples/transaction/incomesType"
+          },
+          "date": {
+            "$ref": "#/components/examples/transaction/date"
+          },
+          "time": {
+            "$ref": "#/components/examples/transaction/time"
+          },
+          "category": {
+            "description": "User`s transaction category",
+            "type": "object",
+            "properties": {
+              "_id": {
+                "$ref": "#/components/examples/category/id"
+              },
+              "categoryName": {
+                "$ref": "#/components/examples/category/incomesName"
+              }
+            }
+          },
+          "sum": {
+            "$ref": "#/components/examples/transaction/sum"
+          },
+          "comment": {
+            "$ref": "#/components/examples/transaction/comment"
+          }
+        }
+      },
+      "IncomesTransactionsListSchema": {
+        "description": "Incomes transactions list",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/examples/IncomesTransactionItemSchema"
+        }
+      },
+      "ExpensesTransactionsListSchema": {
+        "description": "Expenses transactions list",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/examples/ExpensesTransactionItemSchema"
+        }
+      },
+      "transactionsTotal": {
+        "description": "User`s transactions total by current month",
+        "type": "object",
+        "properties": {
+          "incomes": {
+            "$ref": "#/components/examples/transaction/total"
+          },
+          "expenses": {
+            "$ref": "#/components/examples/transaction/total"
+          }
+        }
+      },
+      "category": {
+        "id": {
+          "type": "string",
+          "description": "Category id",
+          "example": "6522bf1f9027bb7d55d6512b"
+        },
+        "incomesName": {
+          "type": "string",
+          "description": "Incomes category name",
+          "minLength": 2,
+          "maxLength": 16,
+          "example": "Salary"
+        },
+        "expensesName": {
+          "type": "string",
+          "description": "Expenses category name",
+          "minLength": 2,
+          "maxLength": 16,
+          "example": "Car"
+        }
+      },
+      "transaction": {
+        "id": {
+          "description": "User`s transaction id",
+          "type": "string",
+          "example": "6529eff94ceb918e15a171f1"
+        },
+        "incomesType": {
+          "description": "User`s transaction type",
+          "type": "string",
+          "enum": [
+            "incomes",
+            "expenses"
+          ],
+          "example": "incomes"
+        },
+        "expensesType": {
+          "description": "User`s transaction type",
+          "type": "string",
+          "enum": [
+            "incomes",
+            "expenses"
+          ],
+          "example": "expenses"
+        },
+        "date": {
+          "description": "User`s transaction date",
+          "type": "string",
+          "example": "2022-12-28"
+        },
+        "time": {
+          "description": "User`s transaction time",
+          "type": "string",
+          "example": "19:45"
+        },
+        "category": {
+          "description": "User`s transaction category id",
+          "type": "string",
+          "example": "6522bf1f9027bb7d55d4893f"
+        },
+        "sum": {
+          "description": "User`s transaction sum",
+          "type": "integer",
+          "min": 1,
+          "max": 1000000,
+          "example": 700
+        },
+        "comment": {
+          "description": "User`s transaction comment",
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 48,
+          "example": "December salary"
+        },
+        "total": {
+          "type": "integer",
+          "min": 0,
+          "example": 700
+        }
+      }
+    }
+  }
+}
