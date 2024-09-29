@@ -1,39 +1,31 @@
-const mongoose = require("mongoose");
 const express = require("express");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 require("dotenv").config();
 
 const app = express();
 
-// Set up proxy middleware for API requests
-const apiProxy = createProxyMiddleware('/api', {
-  target: 'http://localhost:3000', // Ensure this is your frontend server URL
+// Basic Proxy Middleware for API requests
+app.use('/api', createProxyMiddleware({
+  target: 'http://localhost:3000', // Your frontend server address
   changeOrigin: true,
   pathRewrite: {
-    '^/api': '', // Remove `/api` from the path
+    '^/api': '', // This removes `/api` from the beginning of the path
   },
-});
+}));
 
-// Apply the proxy middleware
-app.use(apiProxy);
-
-// Destructure environment variables
+// Database connection and server setup
+const mongoose = require("mongoose");
 const { DB_HOST, PORT = 4040 } = process.env;
 
-// Connect to MongoDB
 mongoose
   .connect(DB_HOST)
   .then(() => {
-    // Start the server upon successful connection
     app.listen(PORT, () => {
-      console.log("==============================");
-      console.log("Server running on PORT:", PORT);
+      console.log(`Server is running on PORT: ${PORT}`);
       console.log("Database connection successful");
-      console.log("==============================");
     });
   })
   .catch((err) => {
-    // Log any errors during connection
     console.error("Database connection failed:", err.message);
-    process.exit(1); // Exit the process with failure
+    process.exit(1);
   });
