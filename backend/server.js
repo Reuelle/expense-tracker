@@ -5,6 +5,18 @@ require("dotenv").config();
 
 const app = express();
 
+// Set up proxy middleware for API requests
+const apiProxy = createProxyMiddleware('/api', {
+  target: 'http://localhost:3000', // Ensure this is your frontend server URL
+  changeOrigin: true,
+  pathRewrite: {
+    '^/api': '', // Remove `/api` from the path
+  },
+});
+
+// Apply the proxy middleware
+app.use(apiProxy);
+
 // Destructure environment variables
 const { DB_HOST, PORT = 4040 } = process.env;
 
@@ -25,15 +37,3 @@ mongoose
     console.error("Database connection failed:", err.message);
     process.exit(1); // Exit the process with failure
   });
-
-// Set up proxy middleware for API requests
-const apiProxy = createProxyMiddleware('/api', {
-  target: 'http://localhost:3000', // Replace with your frontend URL
-  changeOrigin: true,
-  pathRewrite: {
-    '^/api': '', // Remove `/api` from the path
-  },
-});
-
-// Apply the proxy middleware
-app.use(apiProxy);
