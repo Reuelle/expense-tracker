@@ -15,7 +15,7 @@ const setAuthToken = (token) => {
 
 // Login action
 const logIn = createAsyncThunk(
-  'auth/logIn',
+  'auth/login',
   async (credentials, { rejectWithValue, dispatch }) => {
     try {
       const { data } = await axios.post('/auth/login', credentials);
@@ -64,7 +64,7 @@ const fetchCurrentUser = createAsyncThunk(
 
 // Register user action
 const registerUser = createAsyncThunk(
-  'auth/registerUser',
+  'auth/register',
   async (userData, { rejectWithValue, dispatch }) => {
     try {
       const { data } = await axios.post('/auth/register', userData);
