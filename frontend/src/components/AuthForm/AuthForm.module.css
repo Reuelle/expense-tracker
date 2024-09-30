@@ -50,6 +50,7 @@
   border-radius: 40px;
   cursor: pointer;
   margin-top: 55px;
+  z-index: 1;
 }
 
 .navigation {
