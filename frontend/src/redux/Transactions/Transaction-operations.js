@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 // Define API endpoint
-axios.defaults.baseURL = 'http://localhost:4040/api'; // Base URL for your API
+axios.defaults.baseURL = 'http://localhost:4040/api/'; // Base URL for your API
 
 // Create an async thunk for adding a new transaction
 export const addTransaction = createAsyncThunk(
