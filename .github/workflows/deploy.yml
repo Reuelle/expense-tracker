@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16' # Use a Node.js version that matches your project
+          node-version: '16' # Adjust the Node.js version as per your project's requirements
 
       # Install dependencies, lint, and build
       - name: Install, lint, build 🔧
@@ -24,6 +24,7 @@ jobs:
           npm install
           npm run lint:js
           npm run build
+        working-directory: ./backend # Specify the subfolder containing package.json
 
       # Deploy to GitHub Pages
       - name: Deploy 🚀
