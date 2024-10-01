@@ -7,16 +7,25 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
+        uses: actions/checkout@v2
 
+      # Add Node.js setup
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16' # Use a Node.js version that matches your project
+
+      # Install dependencies, lint, and build
       - name: Install, lint, build 🔧
         run: |
           npm install
           npm run lint:js
           npm run build
 
+      # Deploy to GitHub Pages
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
