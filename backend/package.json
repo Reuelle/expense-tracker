@@ -30,5 +30,8 @@
     "swagger-ui-express": "^5.0.1",
     "validate-date": "^2.1.0",
     "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.11.1"
   }
 }
