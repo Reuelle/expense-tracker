@@ -13,6 +13,11 @@ app.use('/api', createProxyMiddleware({
   },
 }));
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('Welcome to the API root!'); // Responds with a simple message for the root
+});
+
 // Database connection and server setup
 const mongoose = require("mongoose");
 const { DB_HOST, PORT = 4040 } = process.env;
@@ -29,3 +34,8 @@ mongoose
     console.error("Database connection failed:", err.message);
     process.exit(1);
   });
+
+// 404 error handler for undefined routes
+app.use((req, res) => {
+  res.status(404).send('404 - Route not found');
+});
