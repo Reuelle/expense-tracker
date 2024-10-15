@@ -2,81 +2,79 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { setUser } from './Auth-slice';
 
-// Set the base URL to the root of your API
-axios.defaults.baseURL = 'http://localhost:4040/api/';
+const api = axios.create({
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:4040/api/',
+});
 
 const setAuthToken = (token) => {
   if (token) {
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+    api.defaults.headers.common.Authorization = `Bearer ${token}`;
   } else {
-    delete axios.defaults.headers.common.Authorization;
+    delete api.defaults.headers.common.Authorization;
   }
 };
 
-// Login action
+const handleError = (error) => {
+  console.error('API Error:', error.response?.data || error.message);
+  return error.response?.data || { message: 'An unexpected error occurred' };
+};
+
 const logIn = createAsyncThunk(
   'auth/login',
   async (credentials, { rejectWithValue, dispatch }) => {
     try {
-      const { data } = await axios.post('/auth/login', credentials);
+      const { data } = await api.post('/auth/login', credentials);
       setAuthToken(data.token);
       dispatch(setUser(data.user));
       return data;
     } catch (error) {
-      return rejectWithValue(error.response.data);
+      return rejectWithValue(handleError(error));
     }
   }
 );
 
-// Logout action
 const logOut = createAsyncThunk(
   'auth/logOut',
   async (_, { rejectWithValue }) => {
     try {
-      await axios.post('/auth/logout');
+      await api.post('/auth/logout');
       setAuthToken(null);
     } catch (error) {
-      return rejectWithValue(error.response.data);
+      return rejectWithValue(handleError(error));
     }
   }
 );
 
-// Fetch current user action
 const fetchCurrentUser = createAsyncThunk(
   'auth/fetchCurrentUser',
   async (_, { getState, rejectWithValue }) => {
     const state = getState();
     const persistedToken = state.auth.token;
-
     if (!persistedToken) {
       return rejectWithValue('No token found');
     }
-
     try {
       setAuthToken(persistedToken);
-      const { data } = await axios.get('/auth/current');
+      const { data } = await api.get('/auth/current');
       return data;
     } catch (error) {
-      return rejectWithValue(error.response.data);
+      return rejectWithValue(handleError(error));
     }
   }
 );
 
-// Register user action
 const registerUser = createAsyncThunk(
   'auth/register',
   async (userData, { rejectWithValue, dispatch }) => {
     try {
-      const { data } = await axios.post('/auth/register', userData);
+      const { data } = await api.post('/auth/register', userData);
       setAuthToken(data.token);
       dispatch(setUser(data.user));
       return data;
     } catch (error) {
-      console.error('Registration error:', error.response.data);
-       return rejectWithValue(error.response.data.message || 'Registration failed');
+      return rejectWithValue(handleError(error));
     }
   }
 );
 
-// Export actions
 export { logIn, logOut, fetchCurrentUser, registerUser };
